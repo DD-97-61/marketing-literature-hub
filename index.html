@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024-2026 Marketing & Branding Literature Hub (35 Papers)</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Helvetica, Arial, sans-serif; background: #0f0f13; color: #e4e4e7; line-height: 1.7; }
+
+.header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 40px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.header h1 { font-size: 2.4em; font-weight: 700; background: linear-gradient(135deg, #e2e8f0, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+.header p { color: #94a3b8; font-size: 1.05em; }
+.stats-bar { display: flex; justify-content: center; gap: 40px; margin-top: 24px; }
+.stat { text-align: center; }
+.stat-num { font-size: 2em; font-weight: 700; color: #60a5fa; }
+.stat-label { font-size: 0.8em; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+
+.filters { padding: 20px 40px; background: #18181b; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; position: sticky; top: 0; z-index: 100; }
+.filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12); background: transparent; color: #a1a1aa; cursor: pointer; font-size: 0.85em; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+.section-title { font-size: 1.4em; font-weight: 600; margin: 40px 0 20px; padding-left: 16px; border-left: 4px solid; }
+.section-title.brand { border-color: #f472b6; color: #f472b6; }
+.section-title.social { border-color: #60a5fa; color: #60a5fa; }
+.section-title.genai { border-color: #a78bfa; color: #a78bfa; }
+.section-title.method { border-color: #34d399; color: #34d399; }
+
+.card { background: #1c1c22; border-radius: 16px; margin-bottom: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+
+.card-header { padding: 24px 28px 16px; position: relative; }
+.card-header.brand { background: linear-gradient(135deg, rgba(244,114,182,0.12), rgba(244,114,182,0.03)); border-bottom: 1px solid rgba(244,114,182,0.15); }
+.card-header.social { background: linear-gradient(135deg, rgba(96,165,250,0.12), rgba(96,165,250,0.03)); border-bottom: 1px solid rgba(96,165,250,0.15); }
+.card-header.genai { background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(167,139,250,0.03)); border-bottom: 1px solid rgba(167,139,250,0.15); }
+.card-header.method { background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(52,211,153,0.03)); border-bottom: 1px solid rgba(52,211,153,0.15); }
+
+.card-id { position: absolute; top: 20px; right: 24px; font-size: 0.75em; color: #52525b; font-weight: 600; letter-spacing: 1px; }
+.card-title { font-size: 1.15em; font-weight: 600; color: #f4f4f5; margin-bottom: 8px; line-height: 1.4; }
+.card-meta { font-size: 0.85em; color: #71717a; margin-bottom: 12px; }
+.card-meta strong { color: #a1a1aa; }
+.journal-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; margin-right: 6px; }
+.journal-badge.jm { background: rgba(239,68,68,0.15); color: #f87171; }
+.journal-badge.jcr { background: rgba(251,146,60,0.15); color: #fb923c; }
+.journal-badge.jams { background: rgba(34,197,94,0.15); color: #4ade80; }
+.journal-badge.mksc { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.journal-badge.jmr { background: rgba(168,85,247,0.15); color: #c084fc; }
+.journal-badge.jrcs { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.journal-badge.smj { background: rgba(244,114,182,0.15); color: #f472b6; }
+.journal-badge.other { background: rgba(148,163,184,0.15); color: #94a3b8; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag { padding: 3px 10px; border-radius: 6px; font-size: 0.72em; font-weight: 500; letter-spacing: 0.3px; }
+.tag.exp { background: rgba(251,146,60,0.15); color: #fb923c; }
+.tag.secondary { background: rgba(34,197,94,0.15); color: #4ade80; }
+.tag.meta { background: rgba(56,189,248,0.15); color: #38bdf8; }
+.tag.nlp { background: rgba(167,139,250,0.15); color: #c084fc; }
+.tag.field { background: rgba(244,114,182,0.15); color: #f472b6; }
+.tag.conceptual { background: rgba(148,163,184,0.15); color: #94a3b8; }
+.tag.qual { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+.card-body { padding: 0 28px 24px; }
+.section { margin-top: 16px; }
+.section-label { font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; padding: 4px 0; }
+.section-label.abstract-l { color: #60a5fa; border-bottom: 1px solid rgba(96,165,250,0.2); }
+.section-label.framework-l { color: #a78bfa; border-bottom: 1px solid rgba(167,139,250,0.2); }
+.section-label.variables-l { color: #f472b6; border-bottom: 1px solid rgba(244,114,182,0.2); }
+.section-label.method-l { color: #34d399; border-bottom: 1px solid rgba(52,211,153,0.2); }
+.section-label.findings-l { color: #fbbf24; border-bottom: 1px solid rgba(251,191,36,0.2); }
+.section-label.innovation-l { color: #fb923c; border-bottom: 1px solid rgba(251,146,60,0.2); }
+.section-text { font-size: 0.9em; color: #d4d4d8; line-height: 1.8; }
+.section-text em { color: #94a3b8; font-style: normal; }
+
+.var-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+.var-item { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.05); }
+.var-label { font-size: 0.7em; color: #71717a; text-transform: uppercase; letter-spacing: 0.5px; }
+.var-value { font-size: 0.85em; color: #e4e4e7; margin-top: 2px; }
+
+.toggle { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.8em; color: #60a5fa; margin-top: 12px; user-select: none; }
+.toggle-label:hover { color: #93c5fd; }
+.toggle-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.toggle:checked + .toggle-label + .toggle-content { max-height: 3000px; }
+.toggle:checked + .toggle-label span::before { content: ''; }
+.toggle-label span::before { content: ''; }
+
+.doi-link { display: inline-block; margin-top: 12px; padding: 6px 14px; background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.2); border-radius: 8px; color: #60a5fa; text-decoration: none; font-size: 0.8em; transition: all 0.2s; }
+.doi-link:hover { background: rgba(96,165,250,0.2); }
+
+.footer { text-align: center; padding: 60px 20px; color: #52525b; font-size: 0.85em; border-top: 1px solid rgba(255,255,255,0.06); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Marketing & Branding Literature Hub</h1>
+  <p>2024-2026 Top Journal Papers | Curated for Secondary Data Researchers</p>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">35</div><div class="stat-label">Papers</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">Journals</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Categories</div></div>
+  </div>
+</div>
+<div class="container">
+<div class="section-title brand">A. Brand Strategy & Equity (7 papers)</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A1</div>
+  <div class="card-title">BMW Is Powerful, Beemer Is Not: Nickname Branding Impairs Brand Performance</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Zhang, Ye &amp; Thomson</strong> (2025) &middot; Journal of Marketing, 89(1), 135-152</div>
+  <div class="tags"><span class="tag exp">Experiments</span><span class="tag secondary">Secondary Data</span><span class="tag field">Field Study</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This research investigates nickname branding, a novel phenomenon whereby firms incorporate the &quot;street&quot; names consumers give brands into their own marketing (e.g., Bloomingdale&#x27;s opening a &quot;Bloomie&#x27;s&quot; store). While practitioners anticipate positive results from deploying this tactic, the current research serves as the first empirical investigation of its likely effectiveness. Drawing on speech act theory, the authors theorize that using a nickname in place of a formal name serves as an act of power redistribution, effectively signaling submission to consumers, thereby reducing the perception of a brand&#x27;s power and weakening its performance. Through a multimethod approach that incorporates secondary data analyses, field studies, and preregistered experiments, the results support this view across a range of performance metrics.</div></div>
+  <input type="checkbox" id="tA0" class="toggle"><label for="tA0" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Based on speech act theory (illocutionary meaning in marketing). The authors argue that a brand nickname is not merely an informal label but a product of social negotiations that signifies power dynamics in the brand-consumer relationship. When a brand adopts a consumer-created nickname, it performs an act of power redistribution -- effectively signaling submission to consumers. This is the first application of speech act theory to brand naming strategy, revealing that brand nicknames carry important social and political implications beyond their surface-level informality. The framework predicts that this power shift will weaken brand performance across multiple dimensions including status perception, pricing power, and consumer engagement.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Nickname branding (use of consumer-given nickname vs. formal brand name)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Brand performance: brand status, price premium, consumer engagement</div></div><div class="var-item"><div class="var-label">Mediator</div><div class="var-value">Perceived brand power (power redistribution)</div></div><div class="var-item"><div class="var-label">Context</div><div class="var-value">Multiple brand categories (BMW/Beemer, Bloomingdale&#x27;s/Bloomie&#x27;s)</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Multimethod approach combining three types of evidence: (1) Secondary data analyses of historical social media data examining real-world brand nickname usage and its performance correlates; (2) Field studies testing nickname branding effects with actual consumers in natural settings; (3) Multiple preregistered controlled experiments manipulating whether participants see a brand&#x27;s social media post using the formal name versus the consumer nickname. The multimethod design ensures convergent validity across different contexts and measurement approaches.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Nickname branding consistently impairs brand performance across all studies and metrics. Using informal consumer-given names in official brand communications: (1) damages perceived brand status by signaling that the brand has ceded power to consumers; (2) reduces consumers&#x27; willingness to pay price premiums; (3) lowers consumer engagement metrics. The mechanism is rooted in power perception -- consumers interpret nickname adoption as the brand &quot;lowering itself,&quot; which paradoxically reduces rather than enhances the brand&#x27;s appeal.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First empirical investigation of nickname branding effectiveness. Counterintuitive finding: practitioners assume incorporating consumer nicknames increases relatability, but the research demonstrates the opposite. Introduces speech act theory to branding research. Actionable guidance for brand managers considering whether to adopt consumer-originated brand nicknames.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429241266586" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A2</div>
+  <div class="card-title">When Diversity Backfires: The Asymmetric Role of Multicultural Diversity on Brand Perception</div>
+  <div class="card-meta"><span class="journal-badge jcr">JCR</span> <strong>Uduehi, Saint Clair, Hamilton &amp; Reed</strong> (2025) &middot; Journal of Consumer Research, 52(2), 330-350</div>
+  <div class="tags"><span class="tag secondary">6 Experiments</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Brands are expanding their market to new consumers by displaying cultural diversity in marketing campaigns -- but the risks are unclear. This article explores the role of the brand&#x27;s characteristics in multicultural diversity. Our findings suggest that when brands launch a new multicultural diversity campaign, it may be well-received if the brand&#x27;s original focus was on the needs of nonmarginalized consumers. However, for brands with a focus on the needs of marginalized consumers (i.e., marginalized-focused brands), such a campaign may be perceived as selling out, thereby negatively impacting consumers&#x27; reactions. Six studies with Black and White U.S. consumers explore this novel &quot;sellout effect&quot; across various product categories and for consequential behaviors. Inclusion is identified as a key mechanism, mitigation strategies are explored, and implications for theory and practice are discussed.</div></div>
+  <input type="checkbox" id="tA1" class="toggle"><label for="tA1" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Proposes the novel &quot;sellout effect&quot; framework. Integrates identity signaling theory with brand positioning literature. Inclusion is the key mediating mechanism. Develops a typology of four CDI (Customer Diversity Initiative) types based on: customer perception (outgroup vs. dissociative group) and duration (episodic vs. ongoing). When marginalized-focused brands pursue diversity, their core consumers feel less included rather than more, triggering identity signaling threat and perceived betrayal.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Brand type (marginalized-focused vs. nonmarginalized-focused) x Diversity campaign</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Consumer reactions, brand perception, consequential behaviors</div></div><div class="var-item"><div class="var-label">Mediator</div><div class="var-value">Perceived inclusion</div></div><div class="var-item"><div class="var-label">Moderators</div><div class="var-value">Consumer race, product category, CDI type</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Six experimental studies with Black and White U.S. consumers across various product categories. Progressive design: early studies establish the basic sellout effect, middle studies test the inclusion mediation mechanism, later studies examine boundary conditions and mitigation strategies. Uses consequential dependent measures (not just attitudes but behavioral intentions).</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Marginalized-focused brands launching multicultural campaigns face backlash (&quot;selling out&quot;) from core consumers; non-marginalized brands benefit from same campaigns. Inclusion perceptions mediate. Ongoing dissociative CDIs trigger strongest backlash via identity signaling threat and perceived betrayal. Aligning CDI duration with relationship types mitigates negative reactions for sincere brands.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First paper identifying asymmetric effect of multicultural diversity based on original brand positioning. Introduces &quot;sellout effect&quot; as new construct. Challenges the assumption that diversity is universally positive. Four-type CDI typology provides structured framework for managers.</div></div>
+  </div>
+  <a href="https://doi.org/10.1093/jcr/ucae068" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A3</div>
+  <div class="card-title">When Learning Negative Brand Associations Leads to Positive Evaluations of Effectiveness</div>
+  <div class="card-meta"><span class="journal-badge jcr">JCR</span> <strong>Saint Clair &amp; Cunha</strong> (2024) &middot; Journal of Consumer Research, 51(3), 497-519</div>
+  <div class="tags"><span class="tag secondary">4 Experiments</span><span class="tag field">Field Study</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Combining associative learning and goal pursuit literatures, this research shows that the influence of affect transfer on brands depends on the active mindset at the time of judgment. Negatively-valenced brand pairings may become desirable when consumers have an instrumentality mindset. Four experiments and one field study across health, entertainment, and news contexts demonstrate that negative associations can paradoxically lead to positive evaluations of effectiveness via a bidirectional association between unpleasantness and instrumentality.</div></div>
+  <input type="checkbox" id="tA2" class="toggle"><label for="tA2" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Integrates associative learning theory with goal pursuit theory. Proposes bidirectional association between unpleasantness and instrumentality. When consumers are in an instrumentality mindset, negative affect signals that a product &quot;works&quot; (like bad-tasting medicine). This challenges the traditional assumption that negative associations always harm brands.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Brand association valence (negative vs. positive)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Evaluations of effectiveness, purchase intention</div></div><div class="var-item"><div class="var-label">Mediator</div><div class="var-value">Bidirectional unpleasantness-instrumentality association</div></div><div class="var-item"><div class="var-label">Moderator</div><div class="var-value">Active mindset (instrumentality vs. hedonic)</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Four controlled experiments plus one field study spanning health (medicine), entertainment (news), and consumer product contexts. Each study manipulates the valence of brand associations while measuring or manipulating the active consumer mindset.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Negative brand associations can paradoxically enhance perceived effectiveness. The mechanism is a bidirectional association: unpleasantness signals instrumentality. The effect is robust across health, entertainment, and news contexts. The instrumentality mindset is the key moderator activating this paradoxical effect.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Counterintuitive finding that negative associations can enhance brand perceptions under specific conditions. Bridges two previously separate theoretical traditions (associative learning and goal pursuit). Novel practical implications for brands in instrumental categories (health, productivity).</div></div>
+  </div>
+  <a href="https://doi.org/10.1093/jcr/ucae001" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A4</div>
+  <div class="card-title">They&#x27;re Not My People: When Inclusive Marketing Backfires</div>
+  <div class="card-meta"><span class="journal-badge jams">JAMS</span> <strong>Hassan, McGowan &amp; Shiu</strong> (2025) &middot; JAMS, 53(2), 563-587</div>
+  <div class="tags"><span class="tag secondary">10 Experiments</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This research investigates when customer diversity initiatives (CDIs) backfire and proposes strategies to mitigate this. CDIs targeting a dissociative group more permanently evoke higher levels of brand distancing behaviors among existing customers, driven by identity signaling threat and perceived betrayal. Ten experimental studies distinguish between four types of brand initiatives based on customer perceptions and duration.</div></div>
+  <input type="checkbox" id="tA3" class="toggle"><label for="tA3" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Identity signaling theory. Four-type CDI typology based on customer perception (outgroup vs. dissociative group) and duration (episodic vs. ongoing). The most damaging combination is ongoing CDIs targeting dissociative groups, because these permanently threaten existing customers&#x27; ability to use the brand as an identity signal.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">CDI type (4 categories based on group x duration)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Brand distancing behaviors</div></div><div class="var-item"><div class="var-label">Mediators</div><div class="var-value">Identity signaling threat, perceived betrayal</div></div><div class="var-item"><div class="var-label">Moderator</div><div class="var-value">Brand sincerity, sub-brand strategy</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Ten experimental studies -- one of the most rigorous multi-study designs in recent JAMS publications. Studies progressively narrow the conditions under which CDI backlash occurs and test mitigation strategies including sub-brand/product customization to reduce identity signaling threat.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Ongoing dissociative CDIs trigger the strongest backlash. Identity signaling threat and perceived betrayal are the dual mediators. For sincere brands, aligning CDI duration with relationship types mitigates negative reactions. Sub-brand and product customization strategies reduce identity threat.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">10-study design provides exceptional rigor. Identifies specific conditions under which inclusion initiatives backfire. Provides actionable mitigation strategies. Advances the diversity and inclusion conversation with nuanced rather than blanket recommendations.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s11747-025-01105-5" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A5</div>
+  <div class="card-title">Avengers, Assemble! Network-Based Contingency Analysis of Spillover Effects in Multi-Brand Alliances</div>
+  <div class="card-meta"><span class="journal-badge jams">JAMS</span> <strong>Klostermann, Hinze, Volckner, Kupfer &amp; Schwerdtfeger</strong> (2024) &middot; JAMS, 52(2), 449-469</div>
+  <div class="tags"><span class="tag secondary">Network Analysis</span><span class="tag secondary">Secondary Data</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Brand alliances are becoming increasingly complex, as marketers have begun to combine not only two but multiple brands to foster spillover effects. A particularly complex brand-alliance strategy is team brands, which combine various brands under a team-brand name. Using data from the Marvel brand universe, we examine contingency factors of sales spillover effects between team brands (e.g., Avengers) and their constituent brands (e.g., Hulk). We investigate the moderating role of key network characteristics from both a firm perspective (brand-brand networks) and a consumer perspective (brand-association networks).</div></div>
+  <input type="checkbox" id="tA4" class="toggle"><label for="tA4" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Network-based contingency framework examining multi-brand alliances through dual network lenses. Firm-side brand-brand network captures strategic combination decisions. Consumer-side brand-association network captures mental associations. Spillover effects are contingent on network position from both perspectives, and the direction of spillover interacts with network type.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Multi-brand alliance composition (team brands &amp; constituent brands)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Sales spillover effects (bidirectional)</div></div><div class="var-item"><div class="var-label">Moderators</div><div class="var-value">Firm-side network properties, consumer-side network properties, spillover direction</div></div><div class="var-item"><div class="var-label">Context</div><div class="var-value">Marvel brand universe</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Network analysis combining firm-side and consumer-side perspectives using the Marvel brand universe as empirical context. Team brands (Avengers, X-Men) and constituent brands (Hulk, Iron Man) form a rich multi-brand alliance network. Sales data captures actual spillover effects. Dual-network approach tests whether firm and consumer perspectives yield different moderating effects.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Network characteristics strongly moderate spillovers, but their impact depends on both the direction (constituent-to-team vs. team-to-constituent) and the network type (brand-brand vs. brand-association). Central brands generate stronger spillovers, but patterns differ across network types.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First application of network analysis to multi-brand alliances (beyond dyadic). Dual firm/consumer network perspective. Marvel universe as uniquely rich empirical context. Directly relevant to co-branding research -- demonstrates how network thinking enriches brand alliance analysis.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s11747-023-00957-z" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A6</div>
+  <div class="card-title">Brand Extension or Co-Branding: The Consumer&#x27;s Attribution of Responsibility to Heritage Brands</div>
+  <div class="card-meta"><span class="journal-badge jrcs">JRCS</span> <strong>Zhang, Guo &amp; Qu</strong> (2025) &middot; JRCS, 82, 104133</div>
+  <div class="tags"><span class="tag secondary">4 Experiments</span><span class="tag exp">Co-branding</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Cross-over brand extension and co-branding are effective innovation strategies for heritage brands to expand into new markets. This research compares consumers&#x27; responses to these two strategies. Based on the conceptual link between responsibility attribution and authenticity, across four experimental studies, this research uncovers the advantage of brand extension over co-branding and its underlying mechanism: the serial mediation of responsibility attribution and new product authenticity. Meanwhile, the consumer&#x27;s mindsets (fixed vs. growth) are identified as a boundary condition. Compared to brand extension, consumers attribute less responsibility to the heritage brand in co-branding, weakening perceived new product authenticity and leading to lower purchase intention. The growth mindset enhances authenticity perception in co-branding, making the advantage of brand extension disappear.</div></div>
+  <input type="checkbox" id="tA5" class="toggle"><label for="tA5" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Responsibility attribution theory linked to product authenticity perception. Serial mediation: crossover strategy type -&gt; responsibility attribution -&gt; perceived new product authenticity -&gt; purchase intention. Growth mindset boundary condition suggests consumers who view heritage brands as capable of evolving may attenuate the negative co-branding effect.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Crossover strategy type (brand extension vs. co-branding)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Purchase intention, consumer evaluations</div></div><div class="var-item"><div class="var-label">Serial Mediators</div><div class="var-value">Responsibility attribution -&gt; New product authenticity</div></div><div class="var-item"><div class="var-label">Moderator</div><div class="var-value">Consumer mindset (fixed vs. growth)</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Four experimental studies comparing brand extension vs. co-branding for heritage brands. Progressive design testing basic effect, serial mediation, moderating role of consumer mindset, and boundary conditions.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Brand extension outperforms co-branding for heritage brands. Serial mediation: co-branding -&gt; lower responsibility attribution -&gt; weaker authenticity perception -&gt; lower purchase intention. Growth mindset moderates: eliminates the advantage of brand extension by enhancing co-branding authenticity perception.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Directly relevant to our co-branding research. Novel comparison via responsibility attribution mechanism. Serial mediation model is methodologically clean. Growth mindset boundary condition opens consumer-level moderator possibilities.</div></div>
+  </div>
+  <a href="https://doi.org/10.1016/j.jretconser.2024.104133" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="brand">
+<div class="card-header brand">
+  <div class="card-id">A7</div>
+  <div class="card-title">Digital Brand Equity: The Concept, Antecedents, Measurement, and Future Development</div>
+  <div class="card-meta"><strong>JBR Authors</strong> (2025) &middot; J. Business Research</div>
+  <div class="tags"><span class="tag conceptual">Conceptual</span><span class="tag conceptual">Scale Development</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This paper addresses the gap in measuring brand equity in digital environments, arguing that traditional metrics may be insufficient in the fast-paced digital era. It develops a conceptualization of digital brand equity, identifies its antecedents (digital brand awareness, digital brand associations, digital perceived quality, digital brand loyalty), proposes measurement approaches appropriate for digital contexts, and outlines future research directions.</div></div>
+  <input type="checkbox" id="tA6" class="toggle"><label for="tA6" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Extends Keller&#x27;s customer-based brand equity (CBBE) model to digital environments. Proposes that digital brand equity has distinct antecedents and measurement requirements compared to traditional brand equity. Digital interactions, algorithmic visibility, and platform-mediated experiences create new dimensions of brand equity not captured by existing frameworks.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Digital marketing activities, platform interactions</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Digital brand equity</div></div><div class="var-item"><div class="var-label">Dimensions</div><div class="var-value">Digital brand awareness, associations, perceived quality, loyalty</div></div><div class="var-item"><div class="var-label">Context</div><div class="var-value">Digital/online brand environments</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Conceptual paper with literature review and scale development. Integrates brand equity literature with digital marketing scholarship. Proposes measurement items for digital brand equity dimensions.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Traditional brand equity measures are insufficient for digital contexts. Digital brand equity requires new measurement approaches that account for algorithmic mediation, platform effects, and digital-native consumer behaviors.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Fills the gap in digital brand equity measurement. Provides a foundation for future empirical research on brand equity in digital environments. Relevant for researchers studying brand effects on social media platforms.</div></div>
+  </div>
+  
+</div>
+</div>
+<div class="section-title social">B. Influencer & Social Media Marketing (7 papers)</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B1</div>
+  <div class="card-title">Revenue Generation Through Influencer Marketing</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Beichert, Bayerl, Goldenberg &amp; Lanz</strong> (2024) &middot; Journal of Marketing, 88(4), 40-63</div>
+  <div class="tags"><span class="tag secondary">1.88M Transactions</span><span class="tag field">Field Study</span><span class="tag secondary">Secondary Data</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Direct-to-consumer (DTC) firms increasingly believe that influencer marketing is an effective option for seeding. However, the current managerially relevant question for DTC firms of whether to target low- or high-followership influencers to generate immediate revenue is still unresolved. In this article, the authors&#x27; goal is to answer this question by considering for the first time the whole influencer-marketing funnel, i.e., from followers on user-generated content networks, to reached followers, to engagement, to actual revenue, while accounting for the cost of paid endorsements. The authors find that low-followership targeting outperforms high-followership targeting by order of magnitude across three performance (ROI) metrics. A mediation analysis reveals that engagement can explain the negative relationship between the influencer followership levels and return on investment.</div></div>
+  <input type="checkbox" id="tB0" class="toggle"><label for="tB0" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Full-funnel influencer marketing model integrating all stages: followers -&gt; reach -&gt; engagement -&gt; revenue, while accounting for costs. Unlike prior research examining individual stages in isolation, this framework treats the entire pipeline as an interconnected system where bottlenecks at any stage affect overall ROI.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Influencer followership level (low vs. high)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Revenue and three ROI metrics</div></div><div class="var-item"><div class="var-label">Mediator</div><div class="var-value">Engagement rate</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">1.88M purchases (&gt;17M EUR), 319 paid influencers</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Large-scale secondary sales data from a major DTC e-commerce brand: 1.88 million purchase transactions (&gt;17M EUR) linked to influencer-specific Instagram discount codes, enabling direct attribution. Supplemented by field studies with 319 paid influencers for causal inference. Mediation analysis on the full funnel.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Low-followership (nano/micro) targeting outperforms by an order of magnitude across all three ROI metrics. Engagement mediates the negative followership-ROI relationship. Nano-influencers&#x27; communication styles align more closely with followers&#x27; expectations. Cost efficiency dramatically favors nano/micro when accounting for endorsement fees.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First study covering the complete influencer funnel to revenue. Dataset (1.88M transactions) among largest in the field. Provides direct ROI evidence rather than engagement proxies. Exemplary secondary data paper demonstrating how transaction data + tracking codes create natural experimental setups.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429231217471" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B2</div>
+  <div class="card-title">Authenticity in Influencer Marketing: How Influencers and Brands Work Together</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Duffek, Eisingerich, Merlo &amp; Lee</strong> (2025) &middot; Journal of Marketing, 89(5)</div>
+  <div class="tags"><span class="tag secondary">185 Interviews</span><span class="tag qual">Qualitative</span><span class="tag qual">Grounded Theory</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Using 185 in-depth interviews with consumers, influencers, brand managers, and influencer marketing agencies, this study triangulates stakeholder perspectives on influencer authenticity. It reveals misalignments that arise when each stakeholder group prioritizes different aspects of authenticity. The research proposes a five-dimension model of influencer authenticity: expertise, connectedness, integrity, originality, and transparency.</div></div>
+  <input type="checkbox" id="tB1" class="toggle"><label for="tB1" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Five-dimension model of influencer authenticity: expertise, connectedness, integrity, originality, and transparency. Authenticity is co-created through interactions among influencers, brands, followers, and agencies. An influencer does not need all five dimensions to be considered authentic -- one dimension can be absent if others offset it.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Influencer behavior, brand partnership structure</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Perceived influencer authenticity</div></div><div class="var-item"><div class="var-label">Dimensions</div><div class="var-value">Expertise, connectedness, integrity, originality, transparency</div></div><div class="var-item"><div class="var-label">Stakeholders</div><div class="var-value">Consumers, influencers, brand managers, agencies</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">185 in-depth qualitative interviews across four stakeholder groups. Grounded theory approach to develop the five-dimension authenticity framework. Multi-stakeholder triangulation reveals where different groups&#x27; authenticity perceptions misalign.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">An influencer doesn&#x27;t need all five dimensions for authenticity. Key tension: influencer creativity vs. brand control. Rigid scripting is rejected by effective influencers. When influencers are transparent about AI&#x27;s role, it can strengthen trust rather than undermine it.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Multi-stakeholder perspective on authenticity. Five-dimension framework developed from grounded theory. Practical insights on managing the creativity-control tension in influencer partnerships.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429251319786" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B3</div>
+  <div class="card-title">Influencer Marketing Effectiveness: A Meta-Analytic Review</div>
+  <div class="card-meta"><span class="journal-badge jams">JAMS</span> <strong>Pan, Blut, Ghiassaleh &amp; Lee</strong> (2025) &middot; JAMS, 53(1), 52-78</div>
+  <div class="tags"><span class="tag meta">Meta-Analysis</span><span class="tag secondary">251 Papers</span><span class="tag secondary">1531 Effects</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This meta-analysis synthesizes 1,531 effect sizes from 251 papers to assess influencer marketing effectiveness by examining its antecedents, mediators, and moderators. Building on the persuasion knowledge model, we identify post, follower, and influencer characteristics as key antecedents impacting both non-transactional (attitude, behavioral engagement, purchase intention) and transactional (purchase behavior, sales) marketing outcomes. For non-transactional outcomes, follower characteristics (social identity) have the strongest effects. For transactional outcomes, influencer characteristics (communication) have the strongest effects.</div></div>
+  <input type="checkbox" id="tB2" class="toggle"><label for="tB2" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Persuasion Knowledge Model as organizing framework. Distinguishes non-transactional outcomes (attitude, engagement, intention) from transactional outcomes (purchase, sales). Social media types and product types as contextual moderators.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Antecedents</div><div class="var-value">Post characteristics, follower characteristics, influencer characteristics</div></div><div class="var-item"><div class="var-label">DVs</div><div class="var-value">Non-transactional (attitude, engagement, intention) + Transactional (purchase, sales)</div></div><div class="var-item"><div class="var-label">Mediators</div><div class="var-value">Persuasion knowledge, source credibility</div></div><div class="var-item"><div class="var-label">Moderators</div><div class="var-value">Social media type, product type</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Meta-analysis of 1,531 effect sizes from 251 papers. Systematic quantitative synthesis with moderator analysis. Distinguishes between outcome types for nuanced conclusions.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Follower social identity -&gt; strongest for attitudes/engagement. Post informational/hedonic value -&gt; strongest for purchase intention. Influencer communication -&gt; strongest for actual purchase behavior. Platform type and product type moderate all relationships.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Most comprehensive influencer meta-analysis (251 papers, 1531 effects). Key innovation: distinguishing transactional vs. non-transactional outcomes reveals different antecedents matter for different outcomes.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s11747-024-01052-7" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B4</div>
+  <div class="card-title">Influencer Marketing Unlocked: Understanding the Value Chains Driving the Creator Economy</div>
+  <div class="card-meta"><span class="journal-badge jams">JAMS</span> <strong>Libai, Rosario, Beichert + 12 scholars</strong> (2025) &middot; JAMS, 53(1), 4-28</div>
+  <div class="tags"><span class="tag conceptual">Conceptual</span><span class="tag secondary">15-Author Team</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This paper examines the dynamics of influencer marketing within the growing creator economy, introducing a novel equity-driven framework that analyzes: (a) how influencers contribute to customer equity, (b) how influencers manage and leverage follower value, and (c) how platforms maximize user value. 15 top marketing scholars collaborate to map the complete creator economy value chain.</div></div>
+  <input type="checkbox" id="tB3" class="toggle"><label for="tB3" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Equity-driven framework for the creator economy analyzing value chains among firms, influencers, followers, and platforms. Three perspectives: customer equity contribution, follower value management, platform value maximization.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">Value chain dynamics in creator economy</div></div><div class="var-item"><div class="var-label">Actors</div><div class="var-value">Firms, influencers, followers, platforms</div></div><div class="var-item"><div class="var-label">Framework</div><div class="var-value">Equity-driven multi-perspective analysis</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Conceptual framework with multi-perspective analysis. 15-author collaboration of top scholars including Goldenberg, Haenlein, Kannan, Muller, Mayzlin.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Maps complex value exchanges within influencer marketing ecosystem. Highlights challenges of ROI measurement. Influencers strategically use content to maintain authenticity while monetizing. Platforms play a critical mediating role in value distribution.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First comprehensive equity-driven framework mapping the complete creator economy value chain from an academic perspective. Landmark 15-author collaboration.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s11747-024-01073-2" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B5</div>
+  <div class="card-title">Influencers: The Power of Comments</div>
+  <div class="card-meta"><span class="journal-badge mksc">MktgSci</span> <strong>Nistor &amp; Selove</strong> (2024) &middot; Marketing Science, 43(6), 1153-1167</div>
+  <div class="tags"><span class="tag conceptual">Game Theory</span><span class="tag conceptual">Analytical Model</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">This paper models how customers read an influencer&#x27;s sponsored post for entertainment and product information, and how those who purchase can leave comments for future customers. A game-theoretic model of strategic interactions between influencers, endorsement decisions, and the role of follower comments.</div></div>
+  <input type="checkbox" id="tB4" class="toggle"><label for="tB4" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Game-theoretic model of strategic interactions between influencers, brands, and followers. Comments serve as an information channel that differentially benefits micro vs. macro influencers.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Influencer type (celebrity vs. micro)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Product quality screening, endorsement decisions</div></div><div class="var-item"><div class="var-label">Mechanism</div><div class="var-value">Comments as information channel</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Analytical game theory model with equilibrium analysis. Examines strategic incentives for influencers of different sizes to screen product quality.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Celebrity influencers endorse all products (value = awareness only). Micro-influencers endorse only high-quality products (value = information screening). Micro-influencer comments carry more informational value because they&#x27;ve already screened for quality.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Novel game-theoretic analysis distinguishing information role of comments across influencer types. Explains why micro-influencer endorsements are inherently more informative.</div></div>
+  </div>
+  <a href="https://doi.org/10.1287/mksc.2022.0186" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B6</div>
+  <div class="card-title">Positive Emotions During Search Engine Use: Impact on Searches and Ad Clicks</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Whitley, Chakravarty &amp; Wang</strong> (2025) &middot; Journal of Marketing, 89(1), 77-93</div>
+  <div class="tags"><span class="tag secondary">5M+ Search Data</span><span class="tag secondary">6 Experiments</span><span class="tag secondary">Secondary Data</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Positive incidental emotion primes emotionally congruent thoughts, increasing the likelihood that consumers use positive emotion words as search keywords. This use of positive emotion keywords reduces persuasion knowledge toward paid search ads, making consumers more likely to click on them. Analysis of 5+ million archived searches and experiments with 6,800 participants across six studies.</div></div>
+  <input type="checkbox" id="tB5" class="toggle"><label for="tB5" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Affect-as-information theory + persuasion knowledge theory. Incidental positive emotion -&gt; positive emotion keywords -&gt; reduced persuasion knowledge -&gt; higher ad click-through.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Incidental positive emotion</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Search keyword choice, paid ad click-through rate</div></div><div class="var-item"><div class="var-label">Mediators</div><div class="var-value">Positive emotion keywords, persuasion knowledge</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">5M+ archived searches, 6800 participants</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">5+ million archived search queries (secondary data) combined with 6 experiments with 6,800 participants. Mixed-methods design moving from observational pattern (search data) to causal mechanism (experiments).</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Positive emotions increase positive keyword usage. Positive keywords reduce persuasion knowledge toward paid ads. Result: more paid ad clicks when consumers are in positive emotional states. Novel linking of incidental affect to search behavior.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First paper linking incidental affect to search engine behavior and advertising. Large-scale mixed-methods (5M searches + 6 experiments). Demonstrates how emotions subtly shape the commercial outcomes of search behavior.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429241263012" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="social">
+<div class="card-header social">
+  <div class="card-id">B7</div>
+  <div class="card-title">Social Media Sponsorship: Metrics for Finding Right Creator-Sponsor Matches</div>
+  <div class="card-meta"><span class="journal-badge mksc">MktgSci</span> <strong>Doosti, Lee &amp; Tan</strong> (2025) &middot; Management Science</div>
+  <div class="tags"><span class="tag nlp">NLP</span><span class="tag secondary">Network Analysis</span><span class="tag secondary">Facebook Data</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Introduces Content Similarity and Audience Closeness metrics using NLP and network methods to match content creators with sponsors. Uses rich data on sponsored and non-sponsored Facebook videos to develop and validate matching algorithms.</div></div>
+  <input type="checkbox" id="tB6" class="toggle"><label for="tB6" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Content Similarity (NLP-based semantic overlap between creator and brand content) + Audience Closeness (network-based overlap in follower bases). Both metrics predict sponsorship effectiveness.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Content similarity, audience closeness</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Sponsorship effectiveness (engagement, reach)</div></div><div class="var-item"><div class="var-label">Method</div><div class="var-value">NLP + network analysis</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">Facebook sponsored/non-sponsored videos</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Large-scale Facebook video data combining NLP content analysis with network analysis of audience overlap. Computational approach to the creator-brand matching problem.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Content similarity and audience closeness are strong predictors of sponsorship effectiveness. Computational matching outperforms intuitive/manual matching. Framework provides scalable, data-driven approach to influencer selection.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Uses computational methods (NLP + network) to solve a practical marketing problem. Published in Management Science -- demonstrates that NLP/network methods are accepted at the highest level for marketing applications.</div></div>
+  </div>
+  <a href="https://doi.org/10.1287/mnsc.2023.01192" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="section-title genai">C. GenAI & Marketing (6 papers)</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C1</div>
+  <div class="card-title">AI-Human Hybrids for Marketing Research: Leveraging LLMs as Collaborators</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Arora, Chakraborty &amp; Nishimura</strong> (2025) &middot; Journal of Marketing, 89(2), 43-70</div>
+  <div class="tags"><span class="tag nlp">LLM/GPT-4</span><span class="tag field">Corporate Partnership</span><span class="tag field">Mixed Methods</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">The authors&#x27; central premise is that a human-LLM hybrid approach leads to efficiency and effectiveness gains in the marketing research process. In qualitative research, LLMs effectively create sample characteristics, generate synthetic respondents, and conduct and moderate in-depth interviews. The AI-human hybrid generates information-rich, coherent data that surpasses human-only data in depth and insightfulness and matches human performance in data analysis tasks. For quantitative research, few-shot learning and retrieval-augmented generation significantly improve quality. The human-LLM hybrid outperforms both human-only and LLM-only approaches. Demonstrated by replicating a Fortune 500 food company study using GPT-4.</div></div>
+  <input type="checkbox" id="tC0" class="toggle"><label for="tC0" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">AI-Human hybrid collaboration model. Humans and LLMs possess complementary skills: humans provide domain expertise and judgment; LLMs provide scale, consistency, and pattern recognition. The framework covers both qualitative (synthetic respondents, interview moderation) and quantitative (few-shot learning, RAG) research applications.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Research approach (human-only vs. LLM-only vs. hybrid)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Research quality (depth, insightfulness, accuracy)</div></div><div class="var-item"><div class="var-label">Techniques</div><div class="var-value">Few-shot learning, RAG</div></div><div class="var-item"><div class="var-label">Validation</div><div class="var-value">Fortune 500 ground truth comparison</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Partnership with Fortune 500 food company to replicate a 2019 study. Qualitative: GPT-4 synthetic personas, in-depth interviews. Quantitative: few-shot + RAG for survey replication. Expert judges blind-evaluated all outputs against original human study as ground truth.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">LLM data surpasses human-only in depth/insightfulness. Matches human performance in theme generation. Few-shot + RAG dramatically improve quantitative accuracy. Human-LLM hybrid outperforms either alone. Expert judges confirmed complementarity.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First JM paper demonstrating complete human-LLM hybrid research pipeline with corporate ground truth validation. Provides practical road maps for both qualitative and quantitative LLM integration. Legitimizes LLM use in top marketing journals.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429241276529" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C2</div>
+  <div class="card-title">Picture Perfect: Engaging Customers with Visual Generative AI</div>
+  <div class="card-meta"><span class="journal-badge jm">JM</span> <strong>Heitmann, Jansen, Reisenbichler &amp; Schweidel</strong> (2025) &middot; Journal of Marketing</div>
+  <div class="tags"><span class="tag nlp">GenAI Visual</span><span class="tag field">Field Test</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Trains an open-source generative AI model on marketing mindset metrics and shows that the resulting visual content can match and even exceed conventionally produced advertising content. Demonstrates that GenAI can be fine-tuned on multiple communication objectives simultaneously and adapted to specific audiences.</div></div>
+  <input type="checkbox" id="tC1" class="toggle"><label for="tC1" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">GenAI capabilities integrated with marketing mindset metrics. The model learns to generate visuals that optimize for specific communication objectives (awareness, consideration, preference) across target audience segments.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">GenAI-generated vs. human-produced visual content</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Advertising performance metrics</div></div><div class="var-item"><div class="var-label">Method</div><div class="var-value">Fine-tuning open-source GenAI on marketing objectives</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Training/fine-tuning an open-source GenAI model on marketing mindset metrics. Field testing generated visual content against conventional advertising benchmarks. Multi-objective optimization (simultaneous fine-tuning for multiple communication goals).</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">GenAI visuals match or exceed human-produced advertising in performance. Model can be simultaneously fine-tuned for multiple objectives and specific audiences. Demonstrates practical cost and speed advantages.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First JM paper demonstrating how to train GenAI for marketing visual content. Shows that open-source models can achieve professional advertising quality. Practical template for marketing teams to implement.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222429251356993" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C3</div>
+  <div class="card-title">The GenAI Future of Consumer Research</div>
+  <div class="card-meta"><span class="journal-badge jcr">JCR</span> <strong>Huang &amp; Rust</strong> (2025) &middot; Journal of Consumer Research, 52(1), 4-17</div>
+  <div class="tags"><span class="tag conceptual">Conceptual</span><span class="tag conceptual">GenAI Framework</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Proposes three main stages of GenAI development relevant to consumer research: democratization (broadens participation), the average trap (produces generic responses from next-token prediction), and model collapse (recursive self-training amplifies machine bias). Examines how AI should enhance human capabilities rather than replace them.</div></div>
+  <input type="checkbox" id="tC2" class="toggle"><label for="tC2" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">&quot;Democratization -- Average Trap -- Model Collapse&quot; three-stage trajectory. Democratization broadens data representation while embedding biases. Average trap: next-token prediction produces outputs lacking individuality. Model collapse: GenAI learning from its own outputs diverges from human behavior.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">GenAI impact on consumer research methodology</div></div><div class="var-item"><div class="var-label">Stages</div><div class="var-value">Democratization, average trap, model collapse</div></div><div class="var-item"><div class="var-label">Key tension</div><div class="var-value">AI replacement vs. AI augmentation</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Conceptual/theoretical article with forward-looking framework. Analyzes GenAI architecture (next-token prediction) to derive implications for research methodology. Invited article for JCR special section on GenAI.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">GenAI will reshape consumer research through three stages, each with distinct pitfalls. Retaining human agency is critical. Hybrid human-AI approaches are essential to avoid the average trap and model collapse. Pure LLM research will produce increasingly generic insights.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First JCR paper articulating fundamental limitations of GenAI from an architectural perspective. Provides theoretical foundation for why human-AI hybrid designs are necessary, not just convenient.</div></div>
+  </div>
+  <a href="https://doi.org/10.1093/jcr/ucaf013" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C4</div>
+  <div class="card-title">How Generative AI Is Shaping the Future of Marketing</div>
+  <div class="card-meta"><span class="journal-badge jams">JAMS</span> <strong>Grewal, Satornino et al.</strong> (2025) &middot; JAMS, 53(3)</div>
+  <div class="tags"><span class="tag conceptual">Conceptual</span><span class="tag conceptual">Roadmap</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">GenAI will influence how marketers interact with customers, create content, and develop products. Presents a four-quadrant organizing framework highlighting trade-offs in GenAI inputs and human augmentation needed for delivering outputs.</div></div>
+  <input type="checkbox" id="tC3" class="toggle"><label for="tC3" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Four-quadrant framework: nature of GenAI inputs (structured vs. unstructured) x extent of human augmentation (low vs. high). Each quadrant has different implications for marketing applications and risks.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Dimensions</div><div class="var-value">GenAI input type x human augmentation level</div></div><div class="var-item"><div class="var-label">Domains</div><div class="var-value">Customer interaction, content creation, product development</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Conceptual article with organizing framework from leading JAMS scholars.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">GenAI will significantly affect customers in both service and sales settings. Marketers need clear understanding of GenAI potential and limitations. Different marketing tasks require different levels of human augmentation.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Forward-looking roadmap from authoritative JAMS team. Four-quadrant framework provides structured thinking about GenAI adoption decisions.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s11747-024-01064-3" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C5</div>
+  <div class="card-title">Generative AI and Personalized Video Advertisements</div>
+  <div class="card-meta"><span class="journal-badge mksc">MktgSci</span> <strong>Kumar &amp; Kapoor</strong> (2024) &middot; Marketing Science</div>
+  <div class="tags"><span class="tag secondary">Field Experiment</span><span class="tag field">WhatsApp</span><span class="tag field">DTC Brand</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Field experiment on WhatsApp with a DTC e-commerce brand selling eco-friendly products. Examines the impact of GenAI-created personalized video ads on consumer engagement. Three conditions: GenAI personalized video, personalized image, generic non-personalized video.</div></div>
+  <input type="checkbox" id="tC4" class="toggle"><label for="tC4" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Personalization theory integrated with GenAI capabilities. Personalized video combines the richness of video with the relevance of personalization, creating a channel that should outperform both personalized static content and generic video.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Ad type (GenAI personalized video vs. personalized image vs. generic video)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Consumer engagement metrics</div></div><div class="var-item"><div class="var-label">Context</div><div class="var-value">WhatsApp, DTC eco-friendly brand</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Randomized field experiment on WhatsApp. Three treatment conditions with a real DTC e-commerce brand. Measures actual engagement outcomes (not hypothetical). Cost-benefit analysis included.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">GenAI personalized video ads increase engagement by 6-9 percentage points over baselines. Effects robust across demographics (gender, location). Substantial cost savings and productivity benefits demonstrated.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First top-journal field experiment demonstrating GenAI personalized video ad effectiveness. Real brand, real consumers, real engagement outcomes. Provides cost-benefit analysis for practical implementation.</div></div>
+  </div>
+  <a href="https://doi.org/10.1287/mksc.2023.0494" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="genai">
+<div class="card-header genai">
+  <div class="card-id">C6</div>
+  <div class="card-title">Generative AI in Marketing: Promises, Perils, and Public Policy Implications</div>
+  <div class="card-meta"><strong>Kumar, Kotler, Gupta &amp; Rajan</strong> (2025) &middot; J. Public Policy &amp; Marketing, 44(3), 309-331</div>
+  <div class="tags"><span class="tag conceptual">Conceptual</span><span class="tag conceptual">Policy</span><span class="tag secondary">Kotler Co-author</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Co-authored by Philip Kotler. Evaluates the pattern of generative AI use by businesses in marketing and develops policy implications promoting beneficial use. Framework based on action -&gt; capabilities -&gt; transformation -&gt; impact link.</div></div>
+  <input type="checkbox" id="tC5" class="toggle"><label for="tC5" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Action -&gt; Capabilities -&gt; Transformation -&gt; Impact organizing framework. Technology infrastructure, skilled personnel, and data access moderate GenAI&#x27;s influence on business capabilities.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">GenAI impact on marketing and society</div></div><div class="var-item"><div class="var-label">Moderators</div><div class="var-value">Tech infrastructure, skilled personnel, data access</div></div><div class="var-item"><div class="var-label">Domains</div><div class="var-value">Customer needs, firm capabilities, marketing-mix, engagement, digital strategy</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Conceptual framework with policy analysis. Co-authored by Philip Kotler, bridging marketing strategy and public policy perspectives.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">GAI can bring positive changes in five areas: understanding customer needs, reevaluating firm capabilities, designing marketing-mix strategies, driving customer engagement, and developing digital strategies. But perils include bias, privacy, and displacement concerns.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Philip Kotler co-authorship. Bridges marketing strategy and public policy. Provides comprehensive assessment of GenAI promises and perils from both business and societal perspectives.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/07439156241286499" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="section-title method">D. Computational Methods (15 papers)</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D1</div>
+  <div class="card-title">Comparative Analysis of BERTopic Versus LDA: Topic Modelling in Marketing Research</div>
+  <div class="card-meta"><strong>Mishra</strong> (2025) &middot; Australasian Marketing Journal</div>
+  <div class="tags"><span class="tag nlp">BERTopic</span><span class="tag nlp">LDA</span><span class="tag nlp">Benchmark</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Topic modelling is the algorithm of future to expand the horizons of domain knowledge in marketing. This study carries out a comparative assessment of BERTopic (BERT-based) and LDA on 200 marketing-mix papers from WoS-indexed journals (2019-2023), 50 per marketing mix element. Presents categorical evidence of BERTopic&#x27;s superiority over LDA as an unsupervised topic modelling algorithm for marketing text.</div></div>
+  <input type="checkbox" id="tD0" class="toggle"><label for="tD0" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">BERTopic pipeline: BERT embeddings -&gt; HDBSCAN clustering -&gt; class-based TF-IDF. LDA pipeline: bag-of-words -&gt; probabilistic topic allocation. Comparison on the same preprocessed corpus with known category labels.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Topic modeling algorithm (BERTopic vs. LDA)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Topic coherence, interpretability, semantic quality</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">200 papers, 50 per marketing mix element (product/price/place/promotion)</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Head-to-head benchmark on curated labeled corpus. The known 4-category marketing mix structure provides ground truth for evaluation. Both algorithms applied to same preprocessed text. Systematic comparison of topic quality metrics.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">BERTopic demonstrates categorical superiority over LDA. BERT embeddings capture semantic meaning rather than word co-occurrence, producing more coherent and interpretable topics. BERTopic correctly distinguishes nuanced marketing themes that LDA conflates.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First BERTopic vs. LDA benchmark for marketing research. Provides methodological justification for marketing scholars to adopt BERTopic. Directly supports our potential method upgrade from LDA/NMF to BERTopic.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/14413582251399667" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D2</div>
+  <div class="card-title">How Topic Modeling Can Spur Innovation Management</div>
+  <div class="card-meta"><strong>Wetzels, Wetzels, Schweiger &amp; Grewal</strong> (2025) &middot; J. Product Innovation Management, 42(5)</div>
+  <div class="tags"><span class="tag secondary">Topic Modeling</span><span class="tag secondary">Innovation</span><span class="tag secondary">1099 Papers</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Reviews 1,099 innovation management articles and compares topic modelling approaches (including BERTopic and LDA variants). Develops a framework mapping topic modelling techniques to distinct innovation process stages (idea generation, development, commercialization).</div></div>
+  <input type="checkbox" id="tD1" class="toggle"><label for="tD1" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Maps topic modeling techniques to innovation process stages. Different stages benefit from different topic modeling approaches based on data characteristics and analytical goals.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">Topic modeling technique selection for innovation contexts</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">1099 innovation management articles</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Literature review of 1099 articles + comparative analysis of topic modeling methods + framework development mapping methods to innovation stages.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Topic modelling extracts meaningful patterns from unstructured text in innovation contexts. Best-practice approaches differ by innovation pipeline stage.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First framework linking topic modelling techniques to distinct innovation process stages. Practical guide for method selection.</div></div>
+  </div>
+  <a href="https://doi.org/10.1111/jpim.12790" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D3</div>
+  <div class="card-title">The Use of LLMs to Annotate Data in Management Research: Foundational Guidelines</div>
+  <div class="card-meta"><span class="journal-badge smj">SMJ</span> <strong>Carlson &amp; Burbano</strong> (2026) &middot; Strategic Management Journal, 47(3), 699-725</div>
+  <div class="tags"><span class="tag nlp">LLM Annotation</span><span class="tag nlp">Prompt Engineering</span><span class="tag conceptual">Framework</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Develops a foundational framework for effective LLM implementation in management research. Five-stage framework: method selection, model configuration, prompt engineering, cost/scale, validation/robustness. Demonstrated through classifying sustainability claims in crowdfunding projects. While LLMs can match or exceed traditional methods at lower cost, variations in prompt design significantly affect results.</div></div>
+  <input type="checkbox" id="tD2" class="toggle"><label for="tD2" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Five-stage LLM implementation framework: (1) Method selection (when LLM vs. traditional); (2) Model configuration (GPT-4, Claude, open-source; temperature, top-p); (3) Prompt engineering (zero-shot, few-shot, CoT, role); (4) Cost/scale (API costs, batch processing); (5) Validation/robustness (sensitivity analysis, human baselines, refutation tests).</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Prompt design, model configuration</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Annotation quality, downstream analysis validity</div></div><div class="var-item"><div class="var-label">Application</div><div class="var-value">Sustainability claims in crowdfunding</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Framework development + empirical application classifying sustainability claims. Sensitivity analyses varying prompt wording and model parameters. Refutation test procedures for methodological robustness.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">LLMs can match/exceed traditional annotation at lower cost. BUT prompt design sensitivity means small prompt changes significantly affect results and downstream analyses. Researchers must report and validate prompt choices.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First foundational LLM annotation framework in a top strategy journal. Critical warning about prompt sensitivity. Refutation test procedures provide template for methodological integrity. Directly applicable to our social media data annotation.</div></div>
+  </div>
+  <a href="https://doi.org/10.1002/smj.70023" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D4</div>
+  <div class="card-title">A Primer for Evaluating Large Language Models in Social-Science Research</div>
+  <div class="card-meta"><strong>Abdurahman, Ziabari, Moore, Bartels &amp; Dehghani</strong> (2025) &middot; Advances in Methods &amp; Practices in Psychological Science</div>
+  <div class="tags"><span class="tag nlp">LLM Evaluation</span><span class="tag secondary">Methodology Guide</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Provides a methodological checklist for LLM-based research covering replicability protocols, prompt documentation, temperature sensitivity, and benchmark comparison with human coders. Offers concrete recommendations for both researchers and reviewers.</div></div>
+  <input type="checkbox" id="tD3" class="toggle"><label for="tD3" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Standardized evaluation protocol for LLM use in social science research. Covers validity, robustness, and replicability dimensions.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">LLM research methodology standardization</div></div><div class="var-item"><div class="var-label">Domains</div><div class="var-value">Marketing, psychology, management, social science</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Methodological guidelines paper providing checklist-based evaluation protocol. Covers documentation requirements, sensitivity testing procedures, and human-baseline comparison standards.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">LLM research requires: (1) full prompt documentation; (2) temperature sensitivity analysis; (3) comparison with human baselines; (4) replication protocols. Current studies often fail to meet these standards.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Standardized evaluation protocol applicable across social sciences. Practical checklist for researchers and reviewers. Sets the methodological bar for LLM-based research.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/25152459251325174" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D5</div>
+  <div class="card-title">GPT-4 as X Data Annotator: Performance on Stance Classification</div>
+  <div class="card-meta"><strong>Liyanage, Gokani &amp; Mago</strong> (2024) &middot; PLoS ONE, 19(8)</div>
+  <div class="tags"><span class="tag nlp">GPT-4</span><span class="tag nlp">Stance Detection</span><span class="tag nlp">3 Prompt Strategies</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Tests GPT-4 with three prompting strategies (Zero-shot, Few-shot, Zero-shot Chain-of-Thought) on X/Twitter stance classification. Uses these labels to fine-tune 26 downstream classifiers. GPT-4 with controlled temperature achieves better accuracy, reliability, and lower bias than human coders.</div></div>
+  <input type="checkbox" id="tD4" class="toggle"><label for="tD4" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Systematic comparison of prompt engineering strategies for LLM-based social media annotation. Tests the full pipeline from LLM annotation to downstream classifier training.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Prompt strategy (Zero-shot, Few-shot, Zero-shot CoT)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Annotation quality, downstream classifier performance</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">X/Twitter posts on abortion legalization</div></div><div class="var-item"><div class="var-label">Classifiers</div><div class="var-value">26 downstream models tested</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Constructed labeled corpus with full inter-rater agreement (3 human annotators). GPT-4 relabeled with 3 strategies. 26 classifiers trained on each label set. Compared accuracy, reliability, and bias across approaches.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Human labels generally achieve higher performance, but Few-shot and Zero-shot CoT labels produce competitive downstream classifiers. GPT-4 with controlled temperature outperforms individual human annotators on accuracy, reliability, and bias.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Systematic comparison of 3 prompt strategies x 26 classifiers. Establishes performance baselines for social media stance detection. Shows LLMs can replace human annotators for certain classification tasks.</div></div>
+  </div>
+  <a href="https://doi.org/10.1371/journal.pone.0307741" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D6</div>
+  <div class="card-title">Topic-Based Segmentation Model for Identifying Drivers of Star Ratings from Text Reviews</div>
+  <div class="card-meta"><span class="journal-badge jmr">JMR</span> <strong>Kim, Lee &amp; McCulloch</strong> (2024) &middot; Journal of Marketing Research, 61(6), 1132-1151</div>
+  <div class="tags"><span class="tag nlp">Bayesian NLP</span><span class="tag secondary">Yelp Reviews</span><span class="tag nlp">Segmentation</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Introduces a novel ML method for identifying interpretable key drivers of star ratings from text reviews. By adopting the Ising model prior to account for word dependencies, the model simultaneously achieves segmentation, identifies segment-level key topics, and estimates word impacts on ratings. Validated on simulated data and real Yelp reviews.</div></div>
+  <input type="checkbox" id="tD5" class="toggle"><label for="tD5" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Unified Bayesian framework jointly performing: (1) consumer segmentation, (2) segment-level topic identification (word co-occurrence groups), (3) impact estimation on ratings. Ising model prior from statistical physics captures word dependencies.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Text review content (words/topics)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Star ratings (customer satisfaction)</div></div><div class="var-item"><div class="var-label">Method</div><div class="var-value">Ising model + Bayesian segmentation</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">Simulated reviews + real Yelp reviews</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Novel ML combining Ising model prior with Bayesian segmentation. Validated on simulated data (known ground truth segments), then applied to real Yelp reviews. The unified approach avoids error propagation between separate steps.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Successfully identifies segment-specific satisfaction drivers that aggregate models miss. Different consumer segments have different topic-to-satisfaction relationships. The unified model outperforms sequential approaches.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First JMR paper jointly performing segmentation + topic extraction + rating-driver estimation in one model. Ising model prior is a creative cross-disciplinary import from physics. Could be adapted for our social media analysis.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/00222437241246752" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D7</div>
+  <div class="card-title">Natural Language Processing for Social Science Research: A Comprehensive Review</div>
+  <div class="card-meta"><strong>Hou &amp; Huang</strong> (2025) &middot; Chinese Journal of Sociology, 1, 121-157</div>
+  <div class="tags"><span class="tag nlp">NLP Survey</span><span class="tag secondary">BERT</span><span class="tag secondary">Social Science</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Three-layer NLP framework: (1) preprocessing and representing unstructured text, (2) extracting semantic information, (3) applying insights to social analyses. Reviews BERT-based models for sentiment, measuring abstract concepts (populism, nationalism), and detecting polarization.</div></div>
+  <input type="checkbox" id="tD6" class="toggle"><label for="tD6" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Three-layer NLP framework mapping methods to social science research tasks. From bag-of-words to transformers, organized by analytical capability.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">NLP method selection for social science</div></div><div class="var-item"><div class="var-label">Methods covered</div><div class="var-value">BoW, Word2Vec, BERT, GPT, topic models, sentiment analysis</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Comprehensive literature review mapping NLP methods to social science tasks. Practical taxonomy for researcher method selection.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">BERT-based models substantially outperform older NLP for complex social-science constructs. Provides practical guide for choosing the right NLP method for specific research questions.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Most comprehensive NLP-to-social-science mapping. Practical guide for marketing scholars selecting NLP tools for their research.</div></div>
+  </div>
+  <a href="https://doi.org/10.1177/2057150X241306780" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D8</div>
+  <div class="card-title">Computer Vision Models for Image Analysis in Advertising Research</div>
+  <div class="card-meta"><strong>Li &amp; Zhang</strong> (2024) &middot; Journal of Advertising, 53(5), 771-790</div>
+  <div class="tags"><span class="tag nlp">Computer Vision</span><span class="tag secondary">12 CV Models</span><span class="tag secondary">Advertising</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Identifies 3 categories and 9 types of image analysis, selects 12 computer vision models (9 single-functional, 3 multi-functional including CLIP), and compares them on capability, accuracy, and usability for advertising image analysis.</div></div>
+  <input type="checkbox" id="tD7" class="toggle"><label for="tD7" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Typology of image analysis tasks in advertising research mapped to CV model capabilities. Decision framework for selecting appropriate CV models.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">CV model benchmarking for advertising</div></div><div class="var-item"><div class="var-label">Models</div><div class="var-value">12 CV models (9 single + 3 multi-functional)</div></div><div class="var-item"><div class="var-label">Tasks</div><div class="var-value">3 categories, 9 types of image analysis</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Systematic benchmark of 12 CV models on advertising image samples. Comparison across capability, accuracy, availability, and usability. Demonstration on content classification + aesthetic scoring.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Multi-functional models (CLIP) offer versatility but single-purpose models can be more accurate. Establishes content-aesthetic score relationships in image advertising.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First systematic CV model benchmark for advertising. Practical decision framework for researchers. Demonstrates emerging multimodal analysis capabilities.</div></div>
+  </div>
+  <a href="https://doi.org/10.1080/00913367.2024.2407644" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D9</div>
+  <div class="card-title">Computer Vision in Branding: CTV-CBBE Framework</div>
+  <div class="card-meta"><strong>Li, Lee &amp; Blasco-Arcas</strong> (2025) &middot; J. Business Research, 193, 115329</div>
+  <div class="tags"><span class="tag nlp">Computer Vision</span><span class="tag secondary">Branding Framework</span><span class="tag secondary">106 Papers</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Integrative review of 106 articles from 35 journals. Develops the CTV-CBBE framework bridging Marr&#x27;s (1982) computational theory of vision with Keller&#x27;s (2001) customer-based brand equity model. Offers a typology of visual features for brand analysis.</div></div>
+  <input type="checkbox" id="tD8" class="toggle"><label for="tD8" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">CTV-CBBE framework: bridges computational vision processes (image representation, recognition, interpretation) with branding outcomes (brand identity, brand meaning, brand response, brand relationship). Maps how CV techniques at each processing level contribute to brand equity measurement.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Focus</div><div class="var-value">CV methods for branding research</div></div><div class="var-item"><div class="var-label">Source</div><div class="var-value">106 articles from 35 journals</div></div><div class="var-item"><div class="var-label">Framework</div><div class="var-value">CTV-CBBE bridge model</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Integrative review of 106 articles across marketing (43%), sector-specific (25%), IS (13%), management (12%), and CV (7%) journals. Framework development mapping CV capabilities to branding outcomes.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Progression from single-level to integrative visual analysis, from single to multimodal approaches. CV contributes to assessing brand identity, enhancing product design, and interpreting brand meaning.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First integrative framework bridging CV processes with branding outcomes. Research agenda for visual branding analysis. Relevant for Xiaohongshu/Instagram research where visuals are primary.</div></div>
+  </div>
+  
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D10</div>
+  <div class="card-title">Multimodal and Multi-Corpora Dynamic Topic Model (MM-DTM) for Brand Analysis</div>
+  <div class="card-meta"><strong>CUC Researchers</strong> (2026) &middot; Electronic Commerce Research</div>
+  <div class="tags"><span class="tag nlp">Dynamic Topic Model</span><span class="tag nlp">Multimodal</span><span class="tag secondary">E-commerce</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Proposes MM-LDA (multimodal, multi-corpora LDA) combining text + images across brands, then extends to MM-DTM adding temporal dynamics. Captures general topics shared across brands and brand-specific topics, tracking their evolution over time.</div></div>
+  <input type="checkbox" id="tD9" class="toggle"><label for="tD9" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Three innovations combined: (1) multimodal (text + images via transfer learning CNN), (2) multi-corpora (across competing brands), (3) dynamic (temporal topic evolution). General topics capture industry-wide concerns; brand-specific topics capture unique positioning.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Input</div><div class="var-value">Text + images from e-commerce reviews across brands</div></div><div class="var-item"><div class="var-label">Output</div><div class="var-value">General topics, brand-specific topics, temporal evolution</div></div><div class="var-item"><div class="var-label">Application</div><div class="var-value">Brand competitive intelligence</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Two-stage model: MM-LDA for static multimodal multi-brand analysis, then MM-DTM for temporal dynamics. Image features via pre-trained CNN. Applied to e-commerce product reviews.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Multimodal approach reveals consumer concerns invisible to text-only models. Dynamic extension captures brand-topic evolution. Enables competitive intelligence tracking over time.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First multimodal + multi-corpora + dynamic topic model for brand analysis. Highly relevant for Xiaohongshu research (image-heavy). Could be adapted for co-branding campaign perception tracking.</div></div>
+  </div>
+  <a href="https://doi.org/10.1007/s10660-025-10092-2" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D11</div>
+  <div class="card-title">Estimating Marketing Component Effects: Double Machine Learning from Targeted Promotions</div>
+  <div class="card-meta"><span class="journal-badge mksc">MktgSci</span> <strong>Ellickson, Kar &amp; Reeder</strong> (2023) &middot; Marketing Science, 42(4), 704-728</div>
+  <div class="tags"><span class="tag nlp">Double ML</span><span class="tag nlp">Causal Inference</span><span class="tag secondary">Email Marketing</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Applies Double Machine Learning (DML) to targeted email promotions, estimating causal effects of promotion content, framing, and deal components through the full conversion funnel. Uses doubly robust causal ML for heterogeneity estimation.</div></div>
+  <input type="checkbox" id="tD10" class="toggle"><label for="tD10" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">DML based on Chernozhukov et al. (2018) adapted for &quot;compound interventions&quot; -- multiple simultaneous treatment components in email subject lines. Doubly robust estimation handles high-dimensional confounders.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Email promotion components (content, framing, deal)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Consumer outcomes (opening, clicking, purchasing)</div></div><div class="var-item"><div class="var-label">Method</div><div class="var-value">DML with compound intervention decomposition</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">DML applied to targeted email promotions. Decomposes compound interventions (multiple simultaneous treatments). Estimates causal effects at each funnel stage. Captures treatment effect heterogeneity.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Content and framing are important drivers. Identifies precise causal effects of individual deal components, personalized content, and semantic choices on consumer behavior at each stage.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Extends DML to compound interventions in marketing. Published in Marketing Science -- establishes DML as an accepted causal method for marketing. Template for marketing causal estimation in high-dimensional settings.</div></div>
+  </div>
+  <a href="https://doi.org/10.1287/mksc.2022.1401" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D12</div>
+  <div class="card-title">Causal Drivers of Sustainable Social Media Engagement: A Double ML Approach</div>
+  <div class="card-meta"><strong>IEEE Authors</strong> (2025) &middot; IEEE Journals</div>
+  <div class="tags"><span class="tag nlp">Double ML</span><span class="tag secondary">Instagram</span><span class="tag secondary">20K Posts</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">DML integrated with DoWhy causal inference platform analyzing 20,768 Instagram posts from textile brands. Controls for sentiment, timing, and sustainability keywords. Compared against OLS, PSM, PSS, and NDIM baselines.</div></div>
+  <input type="checkbox" id="tD11" class="toggle"><label for="tD11" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">DML + DoWhy refutation testing framework for social media content format effects. Establishes causal (not correlational) effects of content type on engagement.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Content format (Reels, Videos, Carousel, Image)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Engagement (likes + comments)</div></div><div class="var-item"><div class="var-label">Controls</div><div class="var-value">Sentiment, posting time, sustainability keywords</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">20,768 Instagram posts</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">DML with DoWhy platform for causal inference. 20,768 Instagram posts from textile brands. Compared against 4 baselines (OLS, PSM, PSS, NDIM). Placebo error testing for robustness.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Reels produce strongest positive causal impact on engagement. Videos and Carousels reduce interaction. DML yields tighter CIs and smaller placebo errors than all baselines.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">First DML + DoWhy application to social media content effects. Demonstrates causal (vs. correlational) analysis is feasible for social media research. Template for our work.</div></div>
+  </div>
+  
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D13</div>
+  <div class="card-title">Social Media Competitive Intelligence Framework: LDA + Sentiment + Engagement Prediction</div>
+  <div class="card-meta"><strong>PLoS Authors</strong> (2024) &middot; PLoS ONE, 19(11)</div>
+  <div class="tags"><span class="tag nlp">LDA</span><span class="tag secondary">Sentiment</span><span class="tag secondary">23 Brands</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Two-phase framework: (1) LDA topic modeling + sentiment analysis on firm social media content; (2) predict customer engagement using NLP features + structured data + environmental variables. Data from 23 leading American catering brands across pandemic periods.</div></div>
+  <input type="checkbox" id="tD12" class="toggle"><label for="tD12" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Integrates NLP topic extraction + sentiment analysis + engagement prediction in a single competitive intelligence pipeline. Environmental variables (COVID data) as external moderators.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Topic labels, sentiment, posting time, media type, COVID variables</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Customer engagement volume</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">Tweets from 23 American catering brands</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Phase 1: LDA + sentiment preprocessing. Phase 2: Engagement prediction model combining NLP features with structured and environmental data. Validated across 23 brands and pandemic natural experiment.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Brand topics shifted significantly during COVID. Framework accurately predicts engagement by combining NLP features with environmental context.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Integrates NLP + sentiment + prediction in one pipeline. 23-brand cross-section. Natural experiment (pandemic) adds causal plausibility.</div></div>
+  </div>
+  <a href="https://doi.org/10.1371/journal.pone.0313191" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D14</div>
+  <div class="card-title">How Prepopulating Search Bars with Keywords Affects Online Consumer Behavior</div>
+  <div class="card-meta"><span class="journal-badge mksc">MktgSci</span> <strong>Sun</strong> (2025) &middot; Marketing Science, 44(6), 1217-1231</div>
+  <div class="tags"><span class="tag secondary">Field Experiment</span><span class="tag secondary">72K Consumers</span><span class="tag secondary">E-commerce</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Randomized field experiment with 72,587 consumers on a major Asian e-commerce platform. Four conditions: trending keywords, personalized keywords (browsing history), niche-category keywords, empty control. Tests how prepopulated search bar content affects purchase behavior.</div></div>
+  <input type="checkbox" id="tD13" class="toggle"><label for="tD13" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Search behavior + nudging/choice architecture theories. Prepopulated keywords serve as subtle behavioral nudges that shape consumer search paths and purchase outcomes.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">IV</div><div class="var-value">Keyword type (trending, personalized, niche, empty)</div></div><div class="var-item"><div class="var-label">DV</div><div class="var-value">Purchase incidence, spending amount</div></div><div class="var-item"><div class="var-label">Data</div><div class="var-value">72,587 consumers, randomized field experiment</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Randomized field experiment on a major Asian e-commerce platform with 72,587 consumers in 4 conditions. Measures actual purchase behavior (not hypothetical).</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Personalized keywords: +21% purchase incidence, +17% spending. Trending keywords: +10.4% purchase, +8.8% spending. Niche keywords: little impact.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">Large-scale field experiment (72K consumers). Demonstrates significant revenue impact of a subtle platform design feature. Exemplary secondary data + experimental design combination.</div></div>
+  </div>
+  <a href="https://doi.org/10.1287/mksc.2024.0793" target="_blank" class="doi-link">View Paper (DOI)</a>
+</div>
+</div>
+<div class="card" data-cat="method">
+<div class="card-header method">
+  <div class="card-id">D15</div>
+  <div class="card-title">From Words to Insights: Text Analysis in Business Research</div>
+  <div class="card-meta"><strong>Herhausen, Ludwig, Abedin, Haque &amp; de Jong</strong> (2025) &middot; J. Business Research, 198</div>
+  <div class="tags"><span class="tag nlp">Text Analysis Guide</span><span class="tag nlp">Method Comparison</span></div>
+</div>
+<div class="card-body">
+  <div class="section"><div class="section-label abstract-l">ABSTRACT</div><div class="section-text">Compares topic models, dictionaries, supervised ML, and LLMs for text analysis in business research. Provides practical guidelines for method selection and implementation. The most current comprehensive text analysis methodology guide.</div></div>
+  <input type="checkbox" id="tD14" class="toggle"><label for="tD14" class="toggle-label"><span></span> Show full analysis</label>
+  <div class="toggle-content">
+    <div class="section"><div class="section-label framework-l">THEORETICAL FRAMEWORK</div><div class="section-text">Comparative framework mapping text analysis methods (topic models, dictionaries, supervised ML, LLMs) to research tasks. Decision criteria include data size, label availability, interpretability needs.</div></div>
+    <div class="section"><div class="section-label variables-l">RESEARCH VARIABLES</div><div class="var-grid"><div class="var-item"><div class="var-label">Methods compared</div><div class="var-value">Topic models (LDA, BERTopic), dictionaries, supervised ML, LLMs</div></div><div class="var-item"><div class="var-label">Evaluation</div><div class="var-value">Accuracy, interpretability, cost, scalability</div></div></div></div>
+    <div class="section"><div class="section-label method-l">RESEARCH METHOD</div><div class="section-text">Methodological comparison and guidelines paper. Evaluates each method on multiple criteria with practical examples.</div></div>
+    <div class="section"><div class="section-label findings-l">CORE FINDINGS</div><div class="section-text">Different methods suit different research questions. LLMs are powerful but require validation. Topic models remain valuable for exploration. Supervised ML is best when labeled data exists.</div></div>
+    <div class="section"><div class="section-label innovation-l">INNOVATION & CONTRIBUTION</div><div class="section-text">2025&#x27;s most comprehensive text analysis guide for business researchers. Practical decision framework. Covers the full spectrum from traditional to cutting-edge methods.</div></div>
+  </div>
+  
+</div>
+</div>
+
+</div>
+<div class="footer">
+  <p>Compiled 2026-03-29 | 35 Papers from JM, JMR, JCR, Marketing Science, JAMS, JRCS, SMJ & more</p>
+  <p style="margin-top:8px;">Click "Show full analysis" on each card for detailed theoretical framework, variables, method, findings, and innovation.</p>
+</div>
+</body>
+</html>
