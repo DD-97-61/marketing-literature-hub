@@ -90,6 +90,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Displ
 .doi-link:hover { background: rgba(96,165,250,0.2); }
 
 .footer { text-align: center; padding: 60px 20px; color: #52525b; font-size: 0.85em; border-top: 1px solid rgba(255,255,255,0.06); }
+
+html.light { --bg: #f8f8fa; }
+html.light body { background: #f8f8fa; color: #1a1a2e; }
+html.light .card { background: #fff; border-color: #e0e0e6; }
+html.light .card-header.brand { background: linear-gradient(135deg, rgba(244,114,182,0.08), rgba(244,114,182,0.02)); }
+html.light .card-header.social { background: linear-gradient(135deg, rgba(96,165,250,0.08), rgba(96,165,250,0.02)); }
+html.light .card-header.genai { background: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(167,139,250,0.02)); }
+html.light .card-header.method { background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(52,211,153,0.02)); }
+html.light .section-text { color: #374151; }
+html.light .card-title { color: #111827; }
+html.light .card-meta { color: #6b7280; }
+html.light .header { background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 50%, #dbeafe 100%); }
+html.light .header h1 { background: linear-gradient(135deg, #1e293b, #334155); -webkit-background-clip: text; }
+html.light .header p { color: #64748b; }
+html.light .var-item { background: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.06); }
 </style>
 </head>
 <body>
@@ -101,6 +116,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Displ
     <div class="stat"><div class="stat-num">18</div><div class="stat-label">Journals</div></div>
     <div class="stat"><div class="stat-num">4</div><div class="stat-label">Categories</div></div>
   </div>
+</div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:16px;">
+  <button onclick="document.documentElement.classList.toggle('light');this.textContent=document.documentElement.classList.contains('light')?'Dark Mode':'Light Mode'" style="padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#94a3b8;cursor:pointer;font-size:0.8em;">Light Mode</button>
+  <button id="langBtn" onclick="toggleLang()" style="padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);color:#94a3b8;cursor:pointer;font-size:0.8em;">中文翻译</button>
 </div>
 <div class="container">
 <div class="section-title brand">A. Brand Strategy & Equity (7 papers)</div>
@@ -813,5 +832,85 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Displ
   <p>Compiled 2026-03-29 | 35 Papers from JM, JMR, JCR, Marketing Science, JAMS, JRCS, SMJ & more</p>
   <p style="margin-top:8px;">Click "Show full analysis" on each card for detailed theoretical framework, variables, method, findings, and innovation.</p>
 </div>
-</body>
+
+<script>
+const translations = {
+  'ABSTRACT': '摘要',
+  'THEORETICAL FRAMEWORK': '理论框架',
+  'RESEARCH VARIABLES': '研究变量',
+  'RESEARCH METHOD': '研究方法',
+  'CORE FINDINGS': '核心发现',
+  'INNOVATION & CONTRIBUTION': '创新与贡献',
+  'Show full analysis': '展开详细分析',
+  'Independent Variable': '自变量',
+  'Dependent Variables': '因变量',
+  'Dependent Variable': '因变量',
+  'Mediator': '中介变量',
+  'Moderator': '调节变量',
+  'Moderators': '调节变量',
+  'Serial Mediators': '串联中介',
+  'Context': '研究场景',
+  'Data': '数据',
+  'Data Scale': '数据规模',
+  'Antecedents': '前因变量',
+  'DVs': '因变量',
+  'Mediators': '中介变量',
+  'Direction': '方向',
+  'Framework': '框架',
+  'Focus': '研究焦点',
+  'Actors': '参与主体',
+  'Dimensions': '维度',
+  'Domains': '领域',
+  'Techniques': '技术手段',
+  'Validation': '验证方式',
+  'Stages': '阶段',
+  'Key tension': '核心张力',
+  'Stakeholders': '利益相关者',
+  'Application': '应用场景',
+  'Methods compared': '对比方法',
+  'Evaluation': '评估维度',
+  'Methods covered': '覆盖方法',
+  'Input': '输入',
+  'Output': '输出',
+  'Mechanism': '机制',
+  'Models': '模型',
+  'Tasks': '任务',
+  'Source': '来源',
+  'Controls': '控制变量',
+  'Classifiers': '分类器',
+  'View Paper (DOI)': '查看论文 (DOI)',
+  'Brand Strategy & Equity': '品牌战略与资产',
+  'Influencer & Social Media Marketing': 'KOL与社交媒体营销',
+  'GenAI & Marketing': 'AI与营销',
+  'Computational Methods': '计算方法',
+  'Papers': '论文',
+  'Journals': '期刊',
+  'Categories': '分类',
+};
+
+let isZh = false;
+let originalTexts = new Map();
+
+function toggleLang() {
+  isZh = !isZh;
+  document.getElementById("langBtn").textContent = isZh ? "English" : "中文翻译";
+
+  if (isZh) {
+    // Save originals and translate
+    document.querySelectorAll(".section-label, .var-label, .toggle-label span, .doi-link, .section-title, .stat-label").forEach(el => {
+      if (!originalTexts.has(el)) originalTexts.set(el, el.textContent);
+      const orig = originalTexts.get(el);
+      for (const [en, zh] of Object.entries(translations)) {
+        if (orig.trim() === en || orig.includes(en)) {
+          el.textContent = orig.replace(en, zh);
+          break;
+        }
+      }
+    });
+  } else {
+    // Restore originals
+    originalTexts.forEach((orig, el) => { el.textContent = orig; });
+  }
+}
+</script></body>
 </html>
