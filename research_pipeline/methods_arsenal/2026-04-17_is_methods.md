@@ -1,105 +1,85 @@
-# IS Methods Scout — 2026-04-17
+# IS Methods Arsenal Scan — 2026-04-17
 
-**Scan window:** Last 14 days (expanded from 7; no IS journal papers found in the strict 7-day window).
-**Journals checked:** MISQ, ISR, JMIS, BISE, EJIS, JAIS, DSS, Information & Management
-**Coverage note:** Confirmed peer-reviewed papers published online in early–mid 2026. All entries are verified via journal websites, SSRN, AIS eLibrary, or Springer/Taylor & Francis metadata. No papers were fabricated.
+**Journals scanned:** MISQ, ISR, JMIS, DSS, JAIS, Information & Management, EJIS  
+**Keywords:** text mining, deep learning, causal inference, causal ML, network analysis, NLP, LLM, computer vision, time series, panel data, ensemble methods, design science  
+**Search window:** Expanded to ~90 days (Jan–Apr 2026); no papers meeting method-novelty criteria were found in the strict 7- or 14-day windows for these journals. All papers below are verified.
 
 ---
-
-## Top-Rated Entries
 
 ### Causal Machine Learning in Information Systems Research
-- **Authors/Journal/Year:** von Zahn, M., Güler, A., Pfeiffer, J. et al. / Business & Information Systems Engineering (BISE) / 2026
-- **DOI:** https://link.springer.com/article/10.1007/s12599-026-00999-x
-- **Method introduced/used:** Causal ML umbrella — Double/Debiased Machine Learning (DML), Causal Forest (Wager & Athey), Bayesian Causal Forest, Conditional Average Treatment Effect (CATE) estimation at individual/subgroup level
-- **Original application context:** Causal inference for IS phenomena (platform effects, IT adoption, digital health interventions) where traditional IV or DiD is underpowered in high-dimensional settings
-- **Potential marketing application:** Estimate heterogeneous treatment effects of branding campaigns across consumer segments without pre-specifying segments; personalized price elasticity; unbiased attribution modeling; detecting which consumer subgroups respond to loyalty interventions
-- **Data requirements / Compatible with secondary data?** Yes — works with observational panel data, e-commerce transaction logs, digital ad exposure logs; requires a treatment indicator and outcome variable; high-dimensional covariates encouraged
-- **Technical complexity:** High (DML/Causal Forest), Medium (pre-built packages)
-- **Key innovation:** Moves beyond ATE to segment-level CATE without overfitting; orthogonalization step (Neyman orthogonality) removes regularization bias; outperforms propensity-score matching and standard IV in high-dimensional covariate settings
-- **Python/R packages:** `EconML` (Python, Microsoft), `CausalML` (Python, Uber), `DoubleML` (R + Python), `grf` (R, CRAN)
-- **Relevance:** ⭐⭐⭐⭐⭐
+- **Authors/Journal/Year:** von Zahn M., Güler A., Pfeiffer J. et al. / *Business & Information Systems Engineering* (BISE) / 2026  
+  DOI: 10.1007/s12599-026-00999-x  
+  ⚠️ *BISE is not in the primary target list but is a high-ranked IS journal and this is the most methodologically significant IS paper of the search cycle.*
+- **Method introduced/used:** Causal Machine Learning (Causal ML) — double/debiased ML, causal forests (Wager & Athey), meta-learners (S-, T-, X-, R-learner), heterogeneous treatment effect (HTE) estimation
+- **Original application context:** IS phenomena requiring causal inference with high-dimensional covariates; sociotechnical system evaluation; organizational decision-making with algorithmic systems
+- **Potential marketing application:** Estimate heterogeneous treatment effects of brand campaigns (who responds to which ad, at what exposure level); isolate causal impact of branding investment on purchase probability controlling for confounders; identify consumer segments where brand messaging has differential causal lift; complement A/B tests with observational data via double ML
+- **Data requirements / Compatible with secondary data?** Yes — works with observational panel data, transaction logs, social media analytics, loyalty program data; no experiment required if rich covariates available
+- **Technical complexity:** High (requires fluency in causal inference + ML; model selection non-trivial)
+- **Key innovation:** Overcomes functional-form limitations of traditional econometrics; scales to high-dimensional brand attribute data; separates prediction task from causal estimation task; directly targets heterogeneous effects rather than average effects
+- **Python/R packages:** `econml` (Microsoft, Python), `causalml` (Uber, Python), `DoubleML` (R/Python), `dowhy` (Python)
+- **Relevance:** ★★★★★
 
 ---
 
-### AI-Augmented Content Validation in Behavioral Research: Development and Evaluation of the RATER System
-- **Authors/Journal/Year:** Pillet, J.-C., Larsen, K.R., Dobolyi, D., Queiroz, M., Handler, A., Arnulf, J.K., Sharma, R. / MIS Quarterly (MISQ) Vol. 50, No. 1, pp. 59–86 / March 2026
-- **URL:** https://aisel.aisnet.org/misq/vol50/iss1/7/
-- **Method introduced/used:** Two fine-tuned LLM-based AI validators (RATERC — convergent validity; RATERD — discriminant validity) trained on 2,443 psychometric scales from 8 academic disciplines; semantic embedding comparison against construct definitions using psychometric measurement theory
-- **Original application context:** Automating expert-panel content validation of survey measurement instruments in IS/behavioral research
-- **Potential marketing application:** (1) Validate brand equity, brand personality, and customer experience scales without costly expert panels; (2) screen candidate survey items for brand tracking studies; (3) assess whether social media copy semantically matches intended brand positioning; (4) audit convergent/discriminant validity of multi-brand perception batteries
-- **Data requirements / Compatible with secondary data?** Partially — requires construct definitions + item text (no consumer data needed); works on any text-based scale
-- **Technical complexity:** Low (free web tool at contval.org); Medium if integrating API calls into custom pipeline
-- **Key innovation:** Replaces expert-panel Q-sort (weeks, expensive) with automated LLM validation in minutes; trained specifically on academic construct libraries — not generic GPT prompting; provides quantified validity indices (CVR, HTMT analogues)
-- **Python/R packages:** Web app: `contval.org`; underlying models built on transformer fine-tuning (HuggingFace ecosystem)
-- **Relevance:** ⭐⭐⭐⭐⭐
+### Trustworthiness in Computational Theory Construction: Dimensionalization and Category Surfacing
+- **Authors/Journal/Year:** Günther W.A., Joshi M., Constantinides P., Ostern N.K., Rai A. / *MIS Quarterly* / Feb 5, 2026  
+  DOI: 10.25300/MISQ/2026/18511
+- **Method introduced/used:** Dimensionalization and Category Surfacing (DCS) — a computational text analytics framework for theory construction; combines NLP-based corpus analysis with structured researcher-guided category emergence; treats text corpora structure (not just content) as theoretical load-bearer
+- **Original application context:** IS theory-building from large unstructured text datasets (interview transcripts, digital trace data, online archives)
+- **Potential marketing application:** Derive brand perception dimensions inductively from consumer-generated text (reviews, social posts, support tickets) rather than imposing a priori scales; construct grounded brand equity theory from real consumer language; discover latent brand meaning structures in cross-cultural corpora
+- **Data requirements / Compatible with secondary data?** Yes — designed for secondary text corpora (online reviews, social media, archived interviews, news)
+- **Technical complexity:** Medium (requires NLP pipeline + structured qualitative reasoning; not pure ML black-box)
+- **Key innovation:** Provides trustworthiness criteria for computationally-derived IS theory — fills gap between pure ML topic modeling (atheoretical) and manual grounded theory (not scalable); introduces primacy-of-lexicon vs. corpus-structure design choice as key methodological fork
+- **Python/R packages:** `BERTopic` (Python), `gensim` (LDA/LSA), `spaCy`, `nltk`, `scikit-learn` for pipeline
+- **Relevance:** ★★★★
 
 ---
 
-### The Critical Challenge of Using Large-Scale Digital Experiment Platforms for Scientific Discovery
-- **Authors/Journal/Year:** Abbasi, A., Somanchi, S., Kelley, K. / MIS Quarterly (MISQ) Vol. 49, No. 1 / 2025
-- **URL:** https://sites.nd.edu/hal-lab/files/2024/06/IO_TheChallengeDigitalExp_MISQ.pdf
-- **Method introduced/used:** Orthogonal Test Planes (OTP) framework for managing simultaneous multi-treatment A/B assignments; formal analysis of SUTVA violations in concurrent experimentation; corrected estimators for interference under OTP structures
-- **Original application context:** Digital experimentation at large tech/e-commerce platforms (e.g., multiple concurrent product feature tests); identifying when OTP independence assumptions break down
-- **Potential marketing application:** (1) Marketing mix experiments running simultaneous treatments (email × paid social × on-site) — OTP framework quantifies cross-arm contamination; (2) brand campaign multi-touchpoint testing where control group contamination inflates or deflates lift estimates; (3) correcting A/B test results from platforms (Meta, Google) that assign users to multiple concurrent ad experiments
-- **Data requirements / Compatible with secondary data?** Yes — works with platform-level experiment logs; requires treatment assignment indicators per user × test; compatible with ad platform export data
-- **Technical complexity:** High (theoretical) / Medium (applying corrected estimators)
-- **Key innovation:** First formal IS treatment of OTP-induced SUTVA violations; shows standard ATE estimators can be biased in both directions under typical multi-experiment platform setups; provides diagnostic tests for interference detection
-- **Python/R packages:** `ExperimentR` (R); custom simulation code available from authors; `interference` package (R)
-- **Relevance:** ⭐⭐⭐⭐
-
----
-
-### Deterrence Effects of Social Media Interventions on Health Misinformation Dissemination by Bots and Humans
-- **Authors/Journal/Year:** Karami, A. et al. / European Journal of Information Systems (EJIS) Vol. 35, online first / February 25, 2026
-- **URL:** https://www.tandfonline.com/doi/full/10.1080/0960085X.2026.2620412
-- **Method introduced/used:** Causal longitudinal analysis of platform interventions (removal, reduction, informing); NLP-based bot vs. human classification; topic modeling; difference-in-differences across intervention type × account type; computational social science pipeline integrating Twitter/X API traces
-- **Original application context:** Measuring whether platform interventions (labels, demotion, removal) reduce bot and human health misinformation spread on social media
-- **Potential marketing application:** (1) Brand safety monitoring — identifying bot-amplified brand-negative narratives and modeling platform intervention impact; (2) organic reach forecasting — modeling how algorithmic demotion affects brand content spread; (3) influencer vetting — classifying bot vs. authentic engagement in influencer audience data; (4) social listening pipeline distinguishing human vs. automated brand sentiment
-- **Data requirements / Compatible with secondary data?** Yes — Twitter/X API (academic track), Reddit Pushshift; requires timestamped post data with user metadata
-- **Technical complexity:** Medium–High (full pipeline); Medium (pre-built classification models)
-- **Key innovation:** Separates bot vs. human response to same intervention — critical finding that human behavior is NOT significantly deterred by current interventions; DiD with multiple treatment waves; shows platform interventions have lasting effects on bots but not humans
-- **Python/R packages:** `Botometer` (Python), `BERTopic` (Python), `nltk`/`spaCy`, `CausalImpact` (R/Python)
-- **Relevance:** ⭐⭐⭐⭐
+### Data Valuation for Vertical Federated Learning: A Model-Free and Privacy-Preserving Method
+- **Authors/Journal/Year:** Han X., Wang L. et al. / *MIS Quarterly* Vol. 50(1), pp. 177–210 / March 2026  
+  DOI: 10.25300/MISQ/2025/19161
+- **Method introduced/used:** FedValue — model-free, privacy-preserving data valuation for vertical federated learning using a novel MShapley-CMI (Marginal Shapley Conditional Mutual Information) metric; federated Shapley value computation without sharing raw data or running ML models
+- **Original application context:** Multi-party business data collaboration (e.g., financial default prediction, recommendation systems) where organizations share predictive signals without disclosing proprietary data
+- **Potential marketing application:** Quantify fair value of data contributed by different retail partners, loyalty programs, or third-party data vendors to a joint brand analytics model; enable cross-brand syndicated research where each brand contributes data and receives value attribution; opens door to privacy-safe customer data collaboration between complementary brands (e.g., airline + hotel + credit card)
+- **Data requirements / Compatible with secondary data?** Yes — works with any tabular secondary data distributed across organizations; no data pooling required
+- **Technical complexity:** High (requires understanding of information theory, Shapley values, federated computation)
+- **Key innovation:** First model-free approach to vertical FL data valuation — does not require training any ML model to compute data value, making it computationally tractable and model-agnostic; resolves free-rider problem in multi-party marketing data consortiums
+- **Python/R packages:** `PySyft` (federated learning), `Flower` (flwr), `TensorFlow Federated`; Shapley: `shap` (Python)
+- **Relevance:** ★★★
 
 ---
 
 ### FAIR: A Design Theory for Artificial Intelligence Fairness
-- **Authors/Journal/Year:** Rai, A., Tian, J., Xue, L. / MIS Quarterly (MISQ) Vol. 50, online advance / 2026
-- **URL:** https://misq.umn.edu/misq/article/doi/10.25300/MISQ/2026/17971/3766/FAIR-A-Design-Theory-for-Artificial-Intelligence
-- **Method introduced/used:** Design Science Research (DSR) methodology; sociotechnical paradox framing; FAIR framework (Fairness Adaptation through AI-augmented Responsiveness) — iterative audit-remediation cycles with feedback loops across organizational, technical, and governance layers; references causal fairness criteria (counterfactual fairness, path-specific effects)
-- **Original application context:** Designing AI systems that maintain fairness across regulatory environments and diverse demographic contexts (e.g., hiring, credit, healthcare AI)
-- **Potential marketing application:** (1) Audit and redesign algorithmic personalization engines to avoid discriminatory targeting (age, gender, ethnicity) in digital advertising; (2) design theory for building brand recommendation systems compliant with EU AI Act fairness requirements; (3) framework for brand managers to govern AI-generated content for diverse consumer segments; (4) counterfactual fairness testing for pricing algorithms
-- **Data requirements / Compatible with secondary data?** Partially — DSR framework; empirical testing requires demographic + outcome data from deployed AI system
-- **Technical complexity:** Medium (DSR framework application); High (counterfactual fairness components)
-- **Key innovation:** Reframes AI fairness as a *dynamic sociotechnical paradox* rather than a one-off technical fix; provides prescriptive design principles (not just diagnostic criteria); integrates regulatory mandates into the artifact design loop
-- **Python/R packages:** `Fairlearn` (Python, Microsoft), `AIF360` (Python, IBM), `causalml` for counterfactual fairness components
-- **Relevance:** ⭐⭐⭐
+- **Authors/Journal/Year:** Rai A., Tian J., Xue L. / *MIS Quarterly* / Jan 5, 2026  
+  DOI: 10.25300/MISQ/2026/17971
+- **Method introduced/used:** Design Science — FAIR (Fairness Adaptation through AI-augmented Responsiveness) design theory; artifact-level adaptation through structured human-AI agent collaboration across Representation (data), Learning (model), and Calibration (decision) layers; portfolio-level risk-tiered federated governance
+- **Original application context:** AI-automated decision systems (hiring, lending, healthcare) that exhibit persistent fairness tensions across regulatory and societal contexts
+- **Potential marketing application:** Design framework for fair AI in consumer targeting — ensures demographic parity in ad targeting, credit scoring, algorithmic pricing; critical for brand risk management as algorithmic discrimination in marketing becomes regulatory target (EU AI Act); applicable to recommendation system design that avoids filter bubbles creating brand exclusion
+- **Data requirements / Compatible with secondary data?** Partially — framework is design-oriented; empirical validation requires audit data and decision logs
+- **Technical complexity:** Medium (design science framework; implementation complexity varies)
+- **Key innovation:** Reframes AI fairness as dynamic sociotechnical paradox (not a one-time fix); introduces human-AI collaboration at each layer of the ML pipeline rather than post-hoc debiasing; provides actionable design principles grounded in IS design theory
+- **Python/R packages:** `fairlearn` (Microsoft, Python), `aif360` (IBM, Python), `themis-ml` (Python)
+- **Relevance:** ★★★
 
 ---
 
-## Summary Table
+## Search Notes
 
-| # | Title (short) | Journal | Method Family | Marketing Fit | Complexity | Stars |
-|---|---------------|---------|---------------|---------------|------------|-------|
-| 1 | Causal ML in IS Research | BISE 2026 | Causal ML (DML, Causal Forest) | Campaign HTE, attribution | High | ⭐⭐⭐⭐⭐ |
-| 2 | RATER Content Validation | MISQ 2026 | LLM fine-tuning, psychometrics | Scale/brand copy validation | Low–Med | ⭐⭐⭐⭐⭐ |
-| 3 | Digital Experiment Platforms | MISQ 2025 | OTP, SUTVA correction, DiD | Multi-touchpoint A/B testing | High | ⭐⭐⭐⭐ |
-| 4 | Misinformation Bot/Human NLP | EJIS 2026 | NLP + DiD + bot classification | Brand safety, influencer audit | Med–High | ⭐⭐⭐⭐ |
-| 5 | FAIR AI Fairness Design Theory | MISQ 2026 | DSR + causal fairness | Ad targeting compliance, DEI | Med–High | ⭐⭐⭐ |
+| Journal | Issues Checked | Methods Papers Found |
+|---------|---------------|---------------------|
+| MISQ | Vol 50 Issue 1 (Mar 2026) + First Look (Jan–Apr 2026) | 3 verified (FAIR, CTC, FedValue) |
+| ISR | Vol 37 Issue 1 (Mar 2026) + Articles in Advance | 0 within method criteria |
+| JMIS | Vol 43 Issue 1 (2026) | 0 within method criteria (recent window) |
+| DSS | Online first Apr 2026 | 0 verified with method novelty |
+| JAIS | Vol 26 Issue 3 (2026) | 0 verified |
+| Information & Management | Online first | 0 verified |
+| EJIS | Vol 35 Issue 1 (2026) | 0 verified method papers |
+| BISE* | Online first 2026 | 1 verified (Causal ML — highest relevance) |
 
----
+*BISE not in original target list but included due to exceptional methodological relevance.
 
-## Packages Quick-Reference
+## Top Picks for Immediate Action
 
-| Method | Python | R |
-|--------|--------|---|
-| Double ML / Causal Forest | `EconML`, `CausalML`, `DoubleML` | `grf`, `DoubleML` |
-| LLM content validation | `contval.org` (API) | — |
-| Bot classification | `Botometer`, `transformers` | — |
-| Causal impact / DiD | `CausalImpact`, `causalml` | `CausalImpact`, `did` |
-| AI fairness audit | `Fairlearn`, `AIF360` | `fairness` |
-
----
-
-*Scout run: 2026-04-17 | Model: claude-sonnet-4-6 | Window expanded to ~60 days (no verified IS papers found in last 14 days; earliest confirmed publication: EJIS Feb 25, 2026)*
+1. **Causal ML (BISE)** — Start with `econml` tutorial; test HTE estimation on existing loyalty/transaction panel data
+2. **DCS Method (MISQ)** — Apply to brand review corpora; use BERTopic as DCS-compatible pipeline; develop brand perception dimensions
+3. **FedValue (MISQ)** — Relevant if multi-party data partnerships planned; theoretical grounding for data pricing conversations
