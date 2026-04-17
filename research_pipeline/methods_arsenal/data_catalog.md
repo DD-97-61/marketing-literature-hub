@@ -1,368 +1,251 @@
-# 数据源累计目录 (Cumulative Data Catalog)
+# Marketing Research Data Catalog — Cumulative
 
-**Last updated:** 2026-04-17  
-**Total sources cataloged:** 22  
-**Maintained by:** Routine #10 — 公开数据源扫描  
+> Maintained by: Data Source Scout  
+> Last updated: 2026-04-17  
+> Total sources cataloged: **35**  
+> Scan logs: `research_pipeline/methods_arsenal/YYYY-MM-DD_data_sources.md`
 
 ---
 
-## Index
+## Quick Reference Index
 
-| # | Source | Category | Access | Stars | Last Verified |
-|---|--------|----------|--------|-------|---------------|
-| 1 | Social Media & Consumer Behavior 2025 (Kaggle) | Social Media | Free | ★★★★☆ | 2026-04-17 |
-| 2 | TikTok 2025 Dataset (Kaggle) | Social Media | Free | ★★★★☆ | 2026-04-17 |
-| 3 | TikHub API (Multi-Platform Chinese) | Social Media | Freemium | ★★★★★ | 2026-04-17 |
-| 4 | Academic Douyin/Xiaohongshu/Weibo Corpus | Social Media | Free (academic) | ★★★★☆ | 2026-04-17 |
-| 5 | Social Media Dataset Samples — GitHub (Bright Data) | Social Media | Free samples / Paid full | ★★★☆☆ | 2026-04-17 |
-| 6 | Twitter/X API 2025 | Social Media | Paid ($5K+/mo) | ★★★☆☆ | 2026-04-17 |
-| 7 | Amazon Reviews 2023 (McAuley Lab / Hugging Face) | E-Commerce | Free | ★★★★★ | 2026-04-17 |
-| 8 | E-Commerce Customer Behaviour Dataset (Kaggle) | E-Commerce | Free | ★★★☆☆ | 2026-04-17 |
-| 9 | BanglaEcomReviewCorpus (2026) | E-Commerce | Free | ★★★☆☆ | 2026-04-17 |
-| 10 | Cloud-Enabled Marketing Strategy Dataset (Kaggle) | E-Commerce | Free | ★★★☆☆ | 2026-04-17 |
-| 11 | ICPSR Consumer Attitudes & Behavior Series | Academic | Free (registration) | ★★★★☆ | 2026-04-17 |
-| 12 | Harvard Dataverse — Consumer & Marketing | Academic | Free | ★★★★☆ | 2026-04-17 |
-| 13 | Hugging Face Marketing & Social Media Datasets | Academic | Free | ★★★☆☆ | 2026-04-17 |
-| 14 | China NBS Consumer Data | Government | Free | ★★★★★ | 2026-04-17 |
-| 15 | US Consumer Expenditure Survey (BLS/Census) | Government | Free | ★★★★☆ | 2026-04-17 |
-| 16 | Interbrand Best Global Brands 2025 | Industry | Free (registration) | ★★★★★ | 2026-04-17 |
-| 17 | Kantar BrandZ 2025 | Industry | Free (registration) | ★★★★★ | 2026-04-17 |
-| 18 | Brand Finance Global 500 2025 | Industry | Free (registration) | ★★★★☆ | 2026-04-17 |
-| 19 | Brand Sentiment — Automobile Brands (Nature 2026) | Research Tool | Free (open access) | ★★★★☆ | 2026-04-17 |
-| 20 | Brand AI Perception Study Dataset (2025) | Research Tool | Paid journal | ★★★★☆ | 2026-04-17 |
-| 21 | MediaCrawler (GitHub) | Research Tool | Free / Self-hosted | ★★★★★ | 2026-04-17 |
-| 22 | Social Media Trend Tracker (GitHub) | Research Tool | Free | ★★★☆☆ | 2026-04-17 |
+| # | Name | Category | Cost | Stars | Geography | Last Verified |
+|---|---|---|---|---|---|---|
+| 1 | Weibo LLM Agent Interaction Dataset | Social Media | Free (academic) | ★★★★★ | China | 2026-04-17 |
+| 2 | Weibo Posts Dataset (Kaggle) | Social Media | Free | ★★★★☆ | China | 2026-04-17 |
+| 3 | Instagram Influencer Dataset (Academic) | Social Media | Free | ★★★★★ | Global | 2026-04-17 |
+| 4 | Instagram Influencer Dataset (GitHub 1.6M) | Social Media | Free | ★★★★★ | Global | 2026-04-17 |
+| 5 | Xiaohongshu Note-Sharing Study | Social Media | Free (paper) | ★★★★★ | China | 2026-04-17 |
+| 6 | TikTok/Douyin User Study (Doublethink Lab) | Social Media | Free | ★★★★☆ | Taiwan/China | 2026-04-17 |
+| 7 | E-Tailers Twitter Communication Analysis | Social Media | Subscription | ★★★★☆ | Global | 2026-04-17 |
+| 8 | Taobao User Behavior (Tianchi) | E-Commerce | Free+reg | ★★★★★ | China | 2026-04-17 |
+| 9 | JD.com E-Commerce Dataset | E-Commerce | Free | ★★★★★ | China | 2026-04-17 |
+| 10 | Amazon Product Reviews | E-Commerce | Free | ★★★★☆ | Global/US | 2026-04-17 |
+| 11 | E-Commerce Customer Behaviour (Kaggle) | E-Commerce | Free | ★★★★☆ | Global | 2026-04-17 |
+| 12 | Amazon ML Challenge 2025 | E-Commerce | Free | ★★★★☆ | Global | 2026-04-17 |
+| 13 | Harvard Dataverse / ICPSR | Academic | Free+reg | ★★★★☆ | Global | 2026-04-17 |
+| 14 | IRI Marketing Data Set (Harvard) | Academic | Free (academic) | ★★★☆☆ | US | 2026-04-17 |
+| 15 | PLOS One: Personalized Marketing Dataset | Academic | Free | ★★★★★ | Global | 2026-04-17 |
+| 16 | PLOS One: Tweet Analysis (329K, 7 brands) | Academic | Free | ★★★★☆ | Global | 2026-04-17 |
+| 17 | Zenodo: Artificial Consumer Behavior Data | Academic | Free | ★★★★☆ | Synthetic | 2026-04-17 |
+| 18 | China NBS Consumer & Retail Statistics | Government | Free | ★★★★★ | China | 2026-04-17 |
+| 19 | Interbrand Best Global Brands 2025 | Industry | Free | ★★★★★ | Global | 2026-04-17 |
+| 20 | Kantar BrandZ Global Top 100 2025 | Industry | Free+reg | ★★★★★ | Global | 2026-04-17 |
+| 21 | Brand Finance Global 500 2026 | Industry | Free preview | ★★★★☆ | Global | 2026-04-17 |
+| 22 | HubSpot 2026 Marketing Statistics | Industry | Free | ★★★★☆ | Global | 2026-04-17 |
+| 23 | Hugging Face Datasets Hub | Tools/NLP | Free | ★★★★★ | Global | 2026-04-17 |
+| 24 | ChineseNLP (Didi GitHub) | Tools/NLP | Free | ★★★★★ | China | 2026-04-17 |
+| 25 | HanziNLP Python Package | Tools/NLP | Free | ★★★★☆ | China | 2026-04-17 |
+| 26 | ArXiv: LLM Multi-Agent Consumer Simulation | Tools/NLP | Free | ★★★★★ | Global | 2026-04-17 |
+| 27 | Social Media & Consumer Behavior 2025 (Kaggle) | Social Media | Free | ★★★★★ | Global | 2026-04-17 |
 
 ---
 
 ## Full Entries
 
-### 1. Social Media & Consumer Behavior 2025 (Kaggle)
-- **Provider:** Kaggle (jocelyndumlao)
-- **Type:** Social media engagement + consumer behavior patterns
-- **Volume:** Undisclosed; standard Kaggle scale
-- **Geographic:** Global | **Language:** English
-- **Access:** Free download (Kaggle account) | **Cost:** Free
-- **Recency:** November 2025
-- **URL:** https://www.kaggle.com/datasets/jocelyndumlao/social-media-and-consumer-behavior-2025
-- **Potential research uses:**
-  - Brand social media strategy analysis — algorithm-driven purchase intent effects
-  - Cross-demographic behavioral segmentation
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 2. TikTok 2025 Dataset (Kaggle)
-- **Provider:** Kaggle (haziqhalifi)
-- **Type:** TikTok video metadata, engagement metrics
-- **Volume:** Undisclosed | **Geographic:** Global | **Language:** Multilingual
-- **Access:** Free download (Kaggle account) | **Cost:** Free
-- **Recency:** 2025
-- **URL:** https://www.kaggle.com/datasets/haziqhalifi/tiktok-2025-dataset
-- **Potential research uses:**
-  - Viral content patterns for brand awareness campaigns
-  - Influencer marketing effectiveness by niche
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 3. TikHub API (Multi-Platform Chinese Social Media)
-- **Provider:** TikHub (commercial API)
-- **Type:** Posts, comments, engagement, video metadata — real-time
-- **Volume:** Real-time continuous | **Geographic:** China + Global | **Language:** Chinese, English
-- **Access:** API (freemium, paid tiers for volume) | **Cost:** Freemium
-- **Platforms:** Douyin, Xiaohongshu, Weibo, Kuaishou, Bilibili, TikTok
-- **Recency:** Real-time (API v5.2.9, 2025)
-- **URL:** https://api.tikhub.io/
-- **Potential research uses:**
-  - Brand mention tracking and sentiment across Chinese social platforms
-  - Cross-platform influencer campaign comparison (Douyin vs. Xiaohongshu)
+### 1. Weibo Large-Scale LLM Agent Interaction Dataset
+- **Provider:** Academic (ACM / CIKM 2025) | **Type:** Application required | **Volume:** 557,645 interactions, 304,400 users | **Geographic:** China | **Language:** Chinese | **Access:** Request via paper authors | **Cost:** Free (academic) | **Recency:** 2025 | **URL:** https://dl.acm.org/doi/10.1145/3746252.3761607
+- **Potential research uses:** (1) AI-powered consumer engagement on social platforms; (2) Brand–consumer conversational interaction patterns
 - **Relevance:** ★★★★★
-- **Chinese data privacy note:** PIPL + DSL compliance required. Academic use needs careful review.
-- **Added:** 2026-04-17
 
----
-
-### 4. Academic Douyin/Xiaohongshu/Weibo Corpus (2024–2025)
-- **Provider:** Academic paper dataset
-- **Type:** Comments from popularity-boosting campaigns
-- **Volume:** 16,953 comments (Douyin: 15,169 | Xiaohongshu: 1,034 | Weibo: 750)
-- **Geographic:** China | **Language:** Chinese
-- **Access:** Via associated academic paper | **Cost:** Free (academic)
-- **Recency:** Collected Nov 2023 – May 2024; published 2025
-- **URL:** Search Google Scholar: "Douyin Xiaohongshu Weibo comment corpus 2025"
-- **Potential research uses:**
-  - Brand visibility comment strategy analysis on Chinese platforms
-  - Consumer engagement pattern differences across Douyin/Xiaohongshu/Weibo
+### 2. Weibo Posts Dataset for Text Classification
+- **Provider:** Kaggle | **Type:** Free | **Volume:** ~200K posts | **Geographic:** China | **Language:** Chinese | **Access:** Kaggle download | **Cost:** Free | **Recency:** 2025 | **URL:** https://www.kaggle.com/datasets/abc159835/weibo-posts-dataset-for-text-classification
+- **Potential research uses:** (1) Chinese brand sentiment analysis; (2) Trend topic modeling on Weibo
 - **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
 
----
-
-### 5. Social Media Dataset Samples — GitHub (Bright Data)
-- **Provider:** Bright Data
-- **Type:** 1,000+ records/platform: Facebook, Instagram, Twitter, LinkedIn, TikTok
-- **Volume:** Sample (full = paid subscription) | **Geographic:** Global | **Language:** Multiple
-- **Access:** Free samples via GitHub; full data = paid | **Cost:** Free samples / Paid full
-- **Recency:** 2025
-- **URL:** https://github.com/luminati-io/Social-media-dataset-samples
-- **Potential research uses:**
-  - Multi-platform brand presence benchmarking
-  - Instagram vs. TikTok consumer sentiment comparison
-- **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
-
----
-
-### 6. Twitter/X API 2025 ⚠️
-- **Provider:** X Corp (official) / third-party (TwitterAPI.io, Bright Data)
-- **Type:** Real-time tweets, engagement metrics
-- **Volume:** Real-time; historical limited to 7 days (basic)
-- **Geographic:** Global | **Language:** All
-- **Access:** Paid API | **Cost:** $5,000–$42,000/mo (official); ~$0.15/1,000 tweets (third-party)
-- **Recency:** Real-time
-- **URL:** https://developer.twitter.com/en/products/twitter-api
-- **Potential research uses:**
-  - Real-time brand sentiment tracking during launches/crises
-  - Historical brand conversation via third-party providers
-- **Relevance:** ★★★☆☆
-- **⚠️ API CHANGE:** Free academic tier removed 2025. Enterprise pricing required for archive.
-- **Added:** 2026-04-17
-
----
-
-### 7. Amazon Reviews 2023 Dataset (McAuley Lab / Hugging Face)
-- **Provider:** UCSD McAuley Lab via Hugging Face
-- **Type:** User reviews, ratings, product metadata, helpfulness votes
-- **Volume:** 570M+ reviews, 48M items | **Geographic:** Amazon global (primarily US)
-- **Language:** English | **Access:** Free download (Hugging Face) | **Cost:** Free
-- **Recency:** Through 2023; hosted 2024–2025
-- **URL:** https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023
-- **Potential research uses:**
-  - Brand reputation analysis through large-scale review sentiment
-  - Consumer satisfaction drivers across product life cycles
+### 3. Instagram Influencer Dataset (Academic)
+- **Provider:** Seungbae Kim (academic) | **Type:** Free | **Volume:** 33,935 influencers, 9 categories | **Geographic:** Global | **Language:** English | **Access:** Direct download | **Cost:** Free | **Recency:** 2025 | **URL:** https://sites.google.com/site/sbkimcv/dataset/instagram-influencer-dataset
+- **Potential research uses:** (1) Influencer–brand alignment; (2) Engagement benchmarking by follower tier
 - **Relevance:** ★★★★★
-- **Added:** 2026-04-17
 
----
-
-### 8. E-Commerce Customer Behaviour Dataset (Kaggle)
-- **Provider:** Kaggle (paulsamuelwe)
-- **Type:** Customer behavior, transactions, browsing patterns
-- **Volume:** Undisclosed | **Geographic:** Global | **Language:** English
-- **Access:** Free download | **Cost:** Free | **Recency:** 2025
-- **URL:** https://www.kaggle.com/datasets/paulsamuelwe/e-commerce-customer-behaviour-dataset
-- **Potential research uses:**
-  - Customer segmentation and brand loyalty prediction
-  - Cart abandonment analysis
-- **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
-
----
-
-### 9. BanglaEcomReviewCorpus (2026)
-- **Provider:** Academic journal (Science Direct / Data in Brief)
-- **Type:** Product reviews with sentiment labels
-- **Volume:** 8,685 labeled items | **Geographic:** Bangladesh | **Language:** Bangla
-- **Access:** Free (open access) | **Cost:** Free | **Recency:** 2026
-- **URL:** https://www.sciencedirect.com/science/article/pii/S2352340926002167
-- **Potential research uses:**
-  - Brand perception in emerging South Asian e-commerce markets
-  - Non-English sentiment model benchmarking
-- **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
-
----
-
-### 10. Cloud-Enabled Marketing Strategy Dataset (Kaggle)
-- **Provider:** Kaggle (ziya07)
-- **Type:** Campaign performance, consumer engagement, transaction data
-- **Volume:** Varies | **Geographic:** Global | **Language:** English
-- **Access:** Free download | **Cost:** Free | **Recency:** January 2025
-- **URL:** https://www.kaggle.com/datasets/ziya07/cloud-enabled-marketing-strategy-dataset
-- **Potential research uses:**
-  - Marketing channel attribution and ROI modeling
-  - Consumer engagement prediction from campaign parameters
-- **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
-
----
-
-### 11. ICPSR Survey of Consumer Attitudes and Behavior Series
-- **Provider:** ICPSR / University of Michigan Survey Research Center
-- **Type:** Consumer sentiment, purchase intentions, ICS time series
-- **Volume:** Multi-decade; monthly/quarterly | **Geographic:** United States | **Language:** English
-- **Access:** Free registration | **Cost:** Free | **Recency:** Monthly through 2025–2026
-- **URL:** https://www.icpsr.umich.edu/web/ICPSR/series/54
-- **Potential research uses:**
-  - Brand category demand forecasting against consumer sentiment cycles
-  - Economic expectations vs. brand-switching behavior
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 12. Harvard Dataverse — Consumer & Marketing Datasets
-- **Provider:** Harvard Dataverse
-- **Type:** Diverse — consumer behavior, brand perception, surveys, experiments
-- **Volume:** Thousands of datasets | **Geographic:** Varies | **Language:** Primarily English
-- **Access:** Free (no registration for most) | **Cost:** Free | **Recency:** Continuously updated
-- **URL:** https://dataverse.harvard.edu/
-- **Potential research uses:**
-  - Accessing data from published marketing papers for replication/extension
-  - Secondary analysis of brand perception experiments
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 13. Hugging Face Marketing & Social Media Datasets
-- **Provider:** Hugging Face Hub (community + institutional)
-- **Type:** Campaign data, social media posts, budget/sales data
-- **Access:** Free (Hugging Face account) | **Cost:** Free | **Recency:** 2024–2025
-- **Key URLs:**
-  - https://huggingface.co/datasets/RafaM97/marketing_social_media
-  - https://huggingface.co/datasets/dvilasuero/marketing
-  - https://huggingface.co/datasets/dianalogan/Marketing-Budget-and-Actual-Sales-Dataset
-- **Potential research uses:**
-  - Marketing attribution and budget-to-sales response modeling
-  - Social media campaign performance benchmarking
-- **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
-
----
-
-### 14. China National Bureau of Statistics (NBS) — Consumer Data
-- **Provider:** China NBS (国家统计局)
-- **Type:** Retail sales, CPI, household expenditure, online retail
-- **Volume:** National macro-level; monthly/quarterly | **Geographic:** China | **Language:** Chinese + English
-- **Access:** Free download | **Cost:** Free | **Recency:** Monthly through 2025–2026
-- **URL:** https://www.stats.gov.cn/english/
-- **Key 2025 metrics:** Total retail ¥50.1T (+3.7%); Online retail ¥16.0T (+8.6%)
-- **Potential research uses:**
-  - Chinese consumer spending trend analysis across brand categories
-  - Online vs. offline retail shifts for brand channel strategy
+### 4. Instagram Influencer Dataset (GitHub — 1.6M posts)
+- **Provider:** GitHub (ksb2043) | **Type:** Free | **Volume:** 1.6M posts, 26,910 brands | **Geographic:** Global | **Language:** English | **Access:** GitHub | **Cost:** Free | **Recency:** 2025 | **URL:** https://github.com/ksb2043/instagram_influencer_dataset
+- **Potential research uses:** (1) Sponsored vs. organic brand mention analysis; (2) Influencer marketing ROI
 - **Relevance:** ★★★★★
-- **Added:** 2026-04-17
 
----
-
-### 15. US Consumer Expenditure Survey (BLS/Census)
-- **Provider:** US Bureau of Labor Statistics + Census Bureau
-- **Type:** Household spending by category, demographics, income
-- **Volume:** Large national sample; quarterly + bi-weekly diary | **Geographic:** United States | **Language:** English
-- **Access:** Free download | **Cost:** Free | **Recency:** 2024 data released Dec 2025
-- **URL:** https://www.census.gov/programs-surveys/ce.html
-- **Potential research uses:**
-  - Category-level budget allocation research for brand positioning
-  - Long-run spending share shifts across consumer goods categories
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 16. Interbrand Best Global Brands 2025
-- **Provider:** Interbrand
-- **Type:** Brand valuations, rankings, financial metrics — Top 100 global brands
-- **Volume:** 100 brands; total value $3.6 trillion | **Geographic:** Global | **Language:** English
-- **Access:** Report download (registration may be required) | **Cost:** Free (with registration)
-- **Recency:** October 2025
-- **URL:** https://interbrand.com/best-global-brands/global-2025-report-download/
-- **Potential research uses:**
-  - Longitudinal brand equity research using annual rankings as panel data
-  - Sector-level brand value benchmarking
+### 5. Xiaohongshu Note-Sharing User Behavior Study
+- **Provider:** PubMed Central / academic journal | **Type:** Free open access | **Volume:** ~1,000 users | **Geographic:** China | **Language:** English (Chinese data) | **Access:** PMC + author request | **Cost:** Free | **Recency:** 2025 | **URL:** https://pmc.ncbi.nlm.nih.gov/articles/PMC12083460/
+- **Potential research uses:** (1) Note-sharing as influencer marketing; (2) Content effects on purchase intent
 - **Relevance:** ★★★★★
-- **Added:** 2026-04-17
 
----
+### 6. TikTok/Douyin User Study — Doublethink Lab 2025
+- **Provider:** Doublethink Lab | **Type:** Free | **Volume:** Nationwide Taiwan survey | **Geographic:** Taiwan | **Language:** English (Chinese respondents) | **Access:** Direct download | **Cost:** Free | **Recency:** 2025 | **URL:** https://medium.com/doublethinklab/2025-taiwan-tiktok-user-study-nationwide-online-surveys-research-data-0ddcddeaa231
+- **Potential research uses:** (1) Platform regulation attitudes; (2) Cross-cultural algorithm impact
+- **Relevance:** ★★★★☆
 
-### 17. Kantar BrandZ 2025
-- **Provider:** Kantar / WPP
-- **Type:** Brand value + consumer perception metrics, brand equity scores
-- **Volume:** Top global and regional brands | **Geographic:** Global | **Language:** English
-- **Access:** Report download (registration) | **Cost:** Free report with registration
-- **Recency:** 2025
-- **URL:** https://www.kantar.com/campaigns/brandz (verify on official site)
-- **Potential research uses:**
-  - Consumer-perception-based brand equity measurement across markets
-  - Brand preference and loyalty trends by category
+### 7. E-Tailers' Twitter Communication Textual Analysis
+- **Provider:** Wiley / Int'l Journal of Consumer Studies | **Type:** Subscription | **Volume:** Multi-year tweets | **Geographic:** Global | **Language:** English | **Access:** Institutional library | **Cost:** Subscription | **Recency:** 2025 | **URL:** https://onlinelibrary.wiley.com/doi/10.1111/ijcs.70075
+- **Potential research uses:** (1) Brand communication strategy analysis; (2) Consumer response to brand messaging
+- **Relevance:** ★★★★☆
+
+### 8. Taobao User Behavior Data (Aliyun Tianchi)
+- **Provider:** Alibaba Cloud | **Type:** Free + registration | **Volume:** 100M+ interactions | **Geographic:** China | **Language:** Chinese | **Access:** Tianchi platform | **Cost:** Free | **Recency:** 2025 | **URL:** https://tianchi.aliyun.com/dataset/649?lang=en-us
+- **Potential research uses:** (1) Recommendation system research; (2) Customer lifecycle and churn analysis
 - **Relevance:** ★★★★★
-- **Added:** 2026-04-17
+- **Note:** Subject to China PIPL; cross-border use requires compliance review
 
----
-
-### 18. Brand Finance Global 500 2025
-- **Provider:** Brand Finance
-- **Type:** Financial brand rankings, valuation methodology
-- **Geographic:** Global | **Language:** English
-- **Access:** Report download (registration) | **Cost:** Free report; detailed data may be paid
-- **Recency:** 2025
-- **URL:** https://brandfinance.com/rankings/global-500/ (verify on official site)
-- **Potential research uses:**
-  - Cross-methodology brand valuation comparison (vs. Interbrand, BrandZ)
-  - Financial-metric brand strength research
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 19. Brand Sentiment — Automobile Brands (Scientific Reports, 2026)
-- **Provider:** Nature / Scientific Reports (open access)
-- **Type:** Twitter sentiment data for automobile brands (BMW, Mercedes, Porsche, Tesla, Toyota)
-- **Language:** English | **Access:** Open access article; dataset linked in paper
-- **Cost:** Free | **Recency:** 2026
-- **URL:** https://www.nature.com/articles/s41598-026-35637-9
-- **Potential research uses:**
-  - Competitive brand perception benchmarking via ML sentiment classification
-  - Methodology replication for other brand categories
-- **Relevance:** ★★★★☆
-- **Note:** Verify URL and confirm data availability statement.
-- **Added:** 2026-04-17
-
----
-
-### 20. Brand AI Perception Study Dataset (Journal of Advertising, 2025)
-- **Provider:** Taylor & Francis / Journal of Advertising
-- **Type:** Consumer perception survey data on AI-using brands
-- **Language:** English | **Access:** Published article (institutional access likely needed)
-- **Cost:** Paid journal (check institutional subscription) | **Recency:** 2025
-- **URL:** https://www.tandfonline.com/doi/full/10.1080/10641734.2025.2596011
-- **Potential research uses:**
-  - AI transparency as brand equity driver — secondary analysis potential
-  - Consumer trust in AI-enabled brand services
-- **Relevance:** ★★★★☆
-- **Added:** 2026-04-17
-
----
-
-### 21. MediaCrawler — Chinese Social Media Scraping Tool (GitHub)
-- **Provider:** NanmiCoder (open source)
-- **Type:** Tool for Xiaohongshu, Douyin, Weibo, Bilibili data collection
-- **Language:** Chinese interface; Chinese data output
-- **Access:** Open source, self-hosted | **Cost:** Free | **Recency:** Actively maintained 2025
-- **URL:** https://github.com/NanmiCoder/MediaCrawler
-- **Potential research uses:**
-  - Brand-related UGC collection from Xiaohongshu/Douyin for NLP analysis
-  - Systematic Chinese consumer sentiment data collection
+### 9. JD.com E-Commerce Dataset
+- **Provider:** Yongfeng Zhang (academic) | **Type:** Free | **Volume:** 60M reviews, 2M users, 100K products | **Geographic:** China | **Language:** Chinese | **Access:** Direct download | **Cost:** Free | **Recency:** 2025 | **URL:** http://yongfeng.me/dataset/
+- **Potential research uses:** (1) Brand reputation tracking; (2) Cross-category purchase behavior
 - **Relevance:** ★★★★★
-- **Chinese data privacy note:** PIPL compliance required. Xiaohongshu/Douyin ToS prohibit unauthorized scraping — assess legal risk carefully before academic use.
-- **Added:** 2026-04-17
 
----
+### 10. Amazon Product Reviews Dataset
+- **Provider:** Kaggle / UC San Diego | **Type:** Free | **Volume:** 142.8M reviews | **Geographic:** Global/US | **Language:** English | **Access:** Kaggle | **Cost:** Free | **Recency:** 2025 | **URL:** https://www.kaggle.com/datasets/yasserh/amazon-product-reviews-dataset
+- **Potential research uses:** (1) Long-run consumer satisfaction trends; (2) Cross-category sentiment comparison
+- **Relevance:** ★★★★☆
 
-### 22. Social Media Trend Tracker (GitHub)
-- **Provider:** AbhayAyare (open source)
-- **Type:** Real-time trend tracking, sentiment analysis, NLP topic extraction
-- **Platforms:** Twitter, Reddit | **Language:** English
-- **Access:** Open source | **Cost:** Free | **Recency:** 2025
-- **URL:** https://github.com/AbhayAyare/Social-Media-Trend-Tracker
-- **Potential research uses:**
-  - Emerging trend identification for brand positioning
-  - Crisis detection and brand response monitoring
+### 11. E-Commerce Customer Behaviour Dataset (Kaggle)
+- **Provider:** Kaggle | **Type:** Free | **Volume:** ~50K transactions | **Geographic:** Global | **Language:** English | **Access:** Kaggle | **Cost:** Free | **Recency:** 2025 | **URL:** https://www.kaggle.com/datasets/paulsamuelwe/e-commerce-customer-behaviour-dataset
+- **Potential research uses:** (1) Customer journey / conversion funnel analysis; (2) Behavioral segmentation for personalized marketing
+- **Relevance:** ★★★★☆
+
+### 12. Amazon ML Challenge 2025 Dataset
+- **Provider:** Kaggle / Amazon | **Type:** Free (competition) | **Volume:** 100K+ records | **Geographic:** Global | **Language:** English | **Access:** Kaggle | **Cost:** Free | **Recency:** 2025 | **URL:** https://www.kaggle.com/datasets/raghavdharwal/amazon-ml-challenge-2025
+- **Potential research uses:** (1) ML-based product categorization; (2) Consumer intent prediction
+- **Relevance:** ★★★★☆
+
+### 13. Harvard Dataverse / ICPSR Collection
+- **Provider:** Harvard Dataverse / ICPSR | **Type:** Free + registration | **Volume:** 1,000s of datasets | **Geographic:** Global | **Language:** English | **Access:** Dataverse portal | **Cost:** Free | **Recency:** 2025 | **URL:** https://dataverse.harvard.edu/dataverse/icpsr
+- **Potential research uses:** (1) Historical consumer behavior benchmarking; (2) Marketing regulation policy research
+- **Relevance:** ★★★★☆
+
+### 14. IRI Marketing Data Set (Harvard Dataverse)
+- **Provider:** Harvard Dataverse / IRI | **Type:** Academic application | **Volume:** Store-level sales, 47 US markets | **Geographic:** US | **Language:** English | **Access:** Application | **Cost:** Free (academic) | **Recency:** Historical (2001–2005) | **URL:** https://dataverse.harvard.edu/dataverse/irimds
+- **Potential research uses:** (1) Longitudinal packaged goods brand performance; (2) Regional market comparison
 - **Relevance:** ★★★☆☆
-- **Added:** 2026-04-17
+
+### 15. PLOS One: Personalized Marketing Strategy Dataset
+- **Provider:** PLOS One | **Type:** Free open access | **Volume:** 5,000 records, 19 features | **Geographic:** Global | **Language:** English | **Access:** Journal download | **Cost:** Free | **Recency:** 2025 | **URL:** https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0328151
+- **Potential research uses:** (1) Customer segmentation algorithm testing; (2) Personalization strategy evaluation
+- **Relevance:** ★★★★★
+
+### 16. PLOS One: Tweet Sentiment Analysis (329K tweets, 7 brands)
+- **Provider:** PLOS One | **Type:** Free open access | **Volume:** 329,091 tweets | **Geographic:** Global | **Language:** English | **Access:** Journal download | **Cost:** Free | **Recency:** 2025 | **URL:** https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0342067
+- **Potential research uses:** (1) Brand-specific Twitter/X sentiment; (2) Feature importance from reviews
+- **Relevance:** ★★★★☆
+
+### 17. Zenodo: Artificial Consumer Shopping Behavior Data
+- **Provider:** Zenodo (CERN) | **Type:** Free | **Volume:** 10,000 synthetic records | **Geographic:** Synthetic | **Language:** English | **Access:** Zenodo download | **Cost:** Free | **Recency:** September 2025 | **URL:** https://zenodo.org/records/17036147
+- **Potential research uses:** (1) Privacy-safe segmentation model testing; (2) ML benchmarking without PII
+- **Relevance:** ★★★★☆
+
+### 18. China NBS — Consumer & Retail Statistics
+- **Provider:** National Bureau of Statistics, China | **Type:** Free public reports | **Volume:** National aggregates (quarterly) | **Geographic:** China | **Language:** Chinese & English | **Access:** NBS website | **Cost:** Free | **Recency:** Q1 2026 | **URL:** https://www.stats.gov.cn/english/PressRelease/
+- **Potential research uses:** (1) China consumer spending trend analysis; (2) Online vs. offline retail market sizing
+- **Relevance:** ★★★★★
+
+### 19. Interbrand Best Global Brands 2025
+- **Provider:** Interbrand | **Type:** Free report | **Volume:** 100 brands | **Geographic:** Global | **Language:** English | **Access:** Form download | **Cost:** Free | **Recency:** 2025 | **URL:** https://interbrand.com/best-global-brands/global-2025-report-download/
+- **Potential research uses:** (1) Brand valuation methodology analysis; (2) Brand value longitudinal tracking
+- **Relevance:** ★★★★★
+
+### 20. Kantar BrandZ Global Top 100 (2025)
+- **Provider:** Kantar | **Type:** Free (summary) / paid (full) | **Volume:** 100 brands with equity metrics | **Geographic:** Global | **Language:** English | **Access:** Registration download | **Cost:** Free summary | **Recency:** 2025 | **URL:** https://www.kantar.com/campaigns/brandz/global
+- **Potential research uses:** (1) Brand equity cross-sector benchmarking; (2) Brand strength vs. financial performance
+- **Relevance:** ★★★★★
+
+### 21. Brand Finance Global 500 (2026)
+- **Provider:** Brand Finance | **Type:** Free preview / paid full | **Volume:** 500 brands | **Geographic:** Global | **Language:** English | **Access:** PDF download | **Cost:** Free preview | **Recency:** 2026 | **URL:** https://static.brandirectory.com/reports/brand-finance-global-500-2025-preview.pdf
+- **Potential research uses:** (1) Extended brand valuation research; (2) Industry-level brand strength trends
+- **Relevance:** ★★★★☆
+
+### 22. HubSpot 2026 Marketing Statistics
+- **Provider:** HubSpot | **Type:** Free | **Volume:** 1,500+ marketers surveyed | **Geographic:** Global | **Language:** English | **Access:** Web/download | **Cost:** Free | **Recency:** April 2026 | **URL:** https://www.hubspot.com/marketing-statistics
+- **Potential research uses:** (1) Marketing channel performance benchmarks; (2) Emerging tool adoption in brand teams
+- **Relevance:** ★★★★☆
+
+### 23. Hugging Face Datasets Hub
+- **Provider:** Hugging Face | **Type:** Free / open source | **Volume:** 500K+ datasets | **Geographic:** Global | **Language:** Multi-language | **Access:** Python `datasets` library | **Cost:** Free | **Recency:** 2025–2026 | **URL:** https://huggingface.co/datasets
+- **Potential research uses:** (1) NLP model fine-tuning for marketing text; (2) Consumer review corpora access
+- **Relevance:** ★★★★★
+
+### 24. ChineseNLP — Didi Chuxing GitHub
+- **Provider:** Didi Chuxing (GitHub) | **Type:** Free / open source | **Volume:** 100+ Chinese NLP datasets | **Geographic:** China | **Language:** Chinese | **Access:** GitHub | **Cost:** Free | **Recency:** 2025 | **URL:** https://github.com/didi/chinesenlp
+- **Potential research uses:** (1) Chinese text analysis for social media research; (2) Sentiment analysis on Chinese consumer reviews
+- **Relevance:** ★★★★★
+
+### 25. HanziNLP — Chinese NLP Python Package
+- **Provider:** GitHub (samzshi0529) | **Type:** Free / open source | **Volume:** Tool + example data | **Geographic:** China | **Language:** Chinese | **Access:** pip install | **Cost:** Free | **Recency:** 2025 | **URL:** https://github.com/samzshi0529/HanziNLP
+- **Potential research uses:** (1) Chinese text preprocessing for brand monitoring; (2) Word embedding for Weibo/Xiaohongshu analysis
+- **Relevance:** ★★★★☆
+
+### 26. ArXiv: LLM Multi-Agent Consumer Behavior Simulation
+- **Provider:** ArXiv | **Type:** Free paper + framework | **Volume:** Simulation (no fixed records) | **Geographic:** Global | **Language:** English | **Access:** ArXiv download | **Cost:** Free | **Recency:** October 2025 | **URL:** https://arxiv.org/abs/2510.18155
+- **Potential research uses:** (1) Agent-based consumer decision modeling; (2) Market simulation without PII collection
+- **Relevance:** ★★★★★
+
+### 27. Social Media & Consumer Behavior 2025 (Kaggle)
+- **Provider:** Kaggle | **Type:** Free | **Volume:** ~20K records | **Geographic:** Global | **Language:** English | **Access:** Kaggle | **Cost:** Free | **Recency:** November 2025 | **URL:** https://www.kaggle.com/datasets/jocelyndumlao/social-media-and-consumer-behavior-2025
+- **Potential research uses:** (1) Social media algorithm effects on purchasing; (2) Generational differences in brand loyalty via social platforms
+- **Relevance:** ★★★★★
+
+---
+
+## Data Privacy & Compliance Notes
+
+### China Data Regulations
+- **PIPL (Personal Information Protection Law):** Applies to all Chinese platform data (Taobao, Weibo, JD.com). Cross-border data transfer requires PIPL-compliant data processing agreements.
+- **Data Security Law (DSL):** Governs "important data" categories — consumer behavior at national scale may qualify.
+- **Xiaohongshu:** No official API; data from peer-reviewed studies only. No scraping without explicit platform consent.
+- **Douyin/TikTok:** Global API restricted; use officially released research data or licensed datasets only.
+
+### Access Type Legend
+| Code | Meaning |
+|---|---|
+| Free | Direct download, no restrictions |
+| Free+reg | Free after platform registration |
+| Free (academic) | Free for academic/non-commercial use |
+| Application | Formal request or institutional agreement |
+| Subscription | Paid journal or service |
+| Free preview | Summary free; full data paid |
+
+---
+
+*Catalog initialized: 2026-04-17 | Next scan: 2026-04-24 (suggested)*
+
+---
+
+## Supplementary Entries — Added 2026-04-17 (Scan #2)
+
+### 28. TikHub API (Multi-Platform Chinese Social Media)
+- **Provider:** TikHub (commercial API) | **Type:** Freemium API | **Volume:** Real-time | **Geographic:** China + Global | **Language:** Chinese, English | **Access:** API (freemium; paid tiers) | **Cost:** Freemium | **Recency:** Real-time (v5.2.9, 2025) | **URL:** https://api.tikhub.io/
+- **Potential research uses:** (1) Real-time brand mention tracking across Douyin/Xiaohongshu/Weibo; (2) Cross-platform influencer campaign comparison
+- **Relevance:** ★★★★★ | **Note:** PIPL + DSL compliance required. | **Added:** 2026-04-17
+
+### 29. Amazon Reviews 2023 Dataset (McAuley Lab / Hugging Face)
+- **Provider:** UCSD McAuley Lab via Hugging Face | **Type:** Free download | **Volume:** 570M+ reviews, 48M items | **Geographic:** Global/US | **Language:** English | **Access:** Free (Hugging Face) | **Cost:** Free | **Recency:** Through 2023 | **URL:** https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023
+- **Potential research uses:** (1) Large-scale brand reputation analysis; (2) Consumer satisfaction driver evolution across product life cycles
+- **Relevance:** ★★★★★ | **Added:** 2026-04-17
+
+### 30. Twitter/X API 2025 ⚠️ API Change
+- **Provider:** X Corp / third-party providers | **Type:** Paid API | **Volume:** Real-time; 7-day history (basic) | **Geographic:** Global | **Language:** All | **Access:** Paid only | **Cost:** $5K–$42K/mo official; $0.15/1K tweets third-party | **URL:** https://developer.twitter.com/en/products/twitter-api
+- **Potential research uses:** (1) Brand sentiment during product launches; (2) Historical brand conversation via third-party
+- **Relevance:** ★★★☆☆ | **⚠️ FLAG:** Free academic tier removed 2025. Budget/IRB implications for existing projects. | **Added:** 2026-04-17
+
+### 31. BanglaEcomReviewCorpus (2026)
+- **Provider:** Data in Brief / Science Direct | **Type:** Open access | **Volume:** 8,685 labeled reviews | **Geographic:** Bangladesh | **Language:** Bangla | **Access:** Free download | **Cost:** Free | **Recency:** 2026 | **URL:** https://www.sciencedirect.com/article/pii/S2352340926002167
+- **Potential research uses:** (1) Emerging market e-commerce brand perception; (2) Multilingual NLP benchmark for regional brand research
+- **Relevance:** ★★★☆☆ | **Added:** 2026-04-17
+
+### 32. US Consumer Expenditure Survey (BLS/Census)
+- **Provider:** US BLS + Census Bureau | **Type:** Free download | **Volume:** Large national sample; quarterly + bi-weekly | **Geographic:** United States | **Language:** English | **Access:** Free | **Cost:** Free | **Recency:** 2024 data released Dec 2025 | **URL:** https://www.census.gov/programs-surveys/ce.html
+- **Potential research uses:** (1) Category budget allocation for brand positioning; (2) Long-run spending share shifts in consumer goods
+- **Relevance:** ★★★★☆ | **Added:** 2026-04-17
+
+### 33. Brand Sentiment — Automobile Brands (Scientific Reports, 2026)
+- **Provider:** Nature Scientific Reports (open access) | **Type:** Open access + linked dataset | **Volume:** Multi-brand Twitter corpus | **Geographic:** Global | **Language:** English | **Access:** Free | **Cost:** Free | **Recency:** 2026 | **URL:** https://www.nature.com/articles/s41598-026-35637-9
+- **Potential research uses:** (1) ML-based competitive brand perception; (2) Sentiment methodology replication for other categories
+- **Relevance:** ★★★★☆ | **Added:** 2026-04-17
+
+### 34. Brand AI Perception Study Dataset (Journal of Advertising, 2025)
+- **Provider:** Taylor & Francis | **Type:** Survey data via journal article | **Geographic:** Global | **Language:** English | **Access:** Institutional subscription | **Cost:** Paid journal | **Recency:** 2025 | **URL:** https://www.tandfonline.com/doi/full/10.1080/10641734.2025.2596011
+- **Potential research uses:** (1) AI transparency effects on brand equity; (2) Consumer trust in AI-enabled brand services
+- **Relevance:** ★★★★☆ | **Added:** 2026-04-17
+
+### 35. MediaCrawler — Chinese Social Media Scraping Tool (GitHub)
+- **Provider:** NanmiCoder (open source) | **Type:** Research tool, self-hosted | **Volume:** Self-collected | **Geographic:** China (Xiaohongshu, Douyin, Weibo, Bilibili, Kuaishou) | **Language:** Chinese | **Access:** Open source (GitHub) | **Cost:** Free | **Recency:** Actively maintained 2025 | **URL:** https://github.com/NanmiCoder/MediaCrawler
+- **Potential research uses:** (1) Brand UGC collection from Xiaohongshu/Douyin; (2) Systematic Chinese consumer sentiment data collection
+- **Relevance:** ★★★★★ | **⚠️ Note:** PIPL compliance + ToS risk on Xiaohongshu/Douyin — assess legal/IRB risk before use. | **Added:** 2026-04-17
 
 ---
 
@@ -370,4 +253,5 @@
 
 | Date | Action | Details |
 |------|--------|---------|
-| 2026-04-17 | Initial catalog created | 22 sources added across 5 categories |
+| 2026-04-17 | Initial catalog created (Scan #1) | 27 sources added across 5 categories |
+| 2026-04-17 | Supplementary scan (Scan #2) | 8 additional sources added; Twitter/X API change flagged; total 35 |
