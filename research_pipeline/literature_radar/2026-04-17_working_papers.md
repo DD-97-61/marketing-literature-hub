@@ -23,6 +23,20 @@
 
 ---
 
+### Sustained Impact of Agentic Personalisation in Marketing: A Longitudinal Case Study
+- **Authors:** Olivier Jeunen, Eleanor Hanna, Schaun Wheeler
+- **Platform:** arXiv (cs.AI / cs.LG) | **arXiv ID:** 2604.08621 | **Date posted:** April 10, 2026
+- **URL:** https://arxiv.org/abs/2604.08621
+- **Research stream:** AI×brand / AI-driven CRM marketing
+- **Abstract summary:** 11-month longitudinal case study of a large-scale consumer app using agentic infrastructure to personalise CRM marketing messaging. Compares an *active* phase (human marketers curating content, audiences, strategy) against a *passive* phase (autonomous agents with no human oversight). Active management yields the highest relative engagement lift; autonomous agents sustain a positive lift independently.
+- **Proposed methodology:** Longitudinal field study; causal engagement-lift measurement; ablation design (active vs. passive agentic phases).
+- **Data source:** Proprietary industry dataset (large-scale consumer app); private — not publicly available.
+- **Key contribution claimed:** First long-duration empirical evidence that autonomous agentic marketing personalisation sustains engagement lifts; quantifies marginal value of human-in-the-loop oversight.
+- **Our assessment:** Strong empirical grounding for AI×brand research. Active-vs-passive framing is novel and directly practical. Key limitation: proprietary data, no replication possible. Could motivate a replication using public platform API data. Cite alongside SSRN 5057404 (Patil, 2025) on AI personalisation.
+- **Relevance:** ★★★★★
+
+---
+
 ### LLM-HYPER: Generative CTR Modeling for Cold-Start Ad Personalization via LLM-Based Hypernetworks
 - **Authors:** Luyi Ma, Wanjia Sherry Zhang, Zezhong Fan, Shubham Thakur, Kai Zhao, Kehui Yao, Ayush Agarwal, Rahul Iyer, Jason Cho, Jianpeng Xu, Evren Korpeoglu, Sushant Kumar, Kannan Achan (Walmart)
 - **Platform:** arXiv (cs.IR / cs.LG) | **Date posted:** April 13, 2026
@@ -38,7 +52,7 @@
 ---
 
 ### Socially Fluent, Socially Awkward: Artificial Intelligence Relational Talk Backfires in Commercial Interactions
-- **Authors:** Stephanie Kwari Dharmaputri + 3 co-authors (affiliations not confirmed in indexed results)
+- **Authors:** Stephanie Kwari Dharmaputri, Anish Nagpal, Greg Nyilasy, Jing Lei
 - **Platform:** arXiv (cs.HC) | **Date posted:** April 14, 2026
 - **URL:** https://arxiv.org/abs/2604.12206
 - **Research stream:** AI×brand
@@ -65,35 +79,49 @@
 
 ---
 
-## High-Relevance Papers from Early April 2026 (Just Outside 7-Day Window)
-
-> Posted April 4–9, 2026. Included for situational awareness.
-
-### Commercial Persuasion in AI-Mediated Conversations
-- **Authors:** Francesco Salvi, Alejandro Cuevas, Manoel Horta Ribeiro (all Princeton University)
-- **Platform:** arXiv (cs.CL / cs.SI) | **Date posted:** April 4, 2026
-- **URL:** https://arxiv.org/abs/2604.04263
-- **Research stream:** AI×brand
-- **Abstract summary:** Two pre-registered experiments (N=2,012) compare traditional search vs. conversational LLM agent for book selection from a large catalogue. LLM-driven persuasion nearly triples sponsored product selection (61.2% vs. 22.4% baseline). Explicit "Sponsored" labels do not significantly reduce manipulation; concealing intent makes influence nearly undetectable (<10% detection accuracy).
-- **Proposed methodology:** Randomised experiment; 5 frontier LLMs tested; behavioural outcome + deception detection.
-- **Data source:** eBook catalogue; primary experimental data (N=2,012).
-- **Key contribution claimed:** First causal evidence that LLM agents covertly redirect consumer choices at scale; shows existing transparency mechanisms are insufficient.
-- **Our assessment:** Landmark paper for AI×brand and consumer protection. Directly pairs with 2604.08525. Urgent implications for disclosure regulation and brand integrity in AI-native retail.
-- **Relevance:** ★★★★★
+### Functional Misalignment in Human-AI Interactions on Digital Platforms
+- **Authors:** Kristina Lerman (Indiana University Bloomington)
+- **Platform:** arXiv (cs.CY / cs.SI) | **arXiv ID:** 2604.11459 | **Date posted:** April 14, 2026
+- **URL:** https://arxiv.org/abs/2604.11459
+- **Research stream:** Social media engagement / methodology
+- **Abstract summary:** Argues that platform harms (polarisation, eroded trust, mental health decline) arise from structural *functional misalignment*: algorithms optimise for predictable observable behaviour (clicks, views) rather than the reflective human goals those predictions are supposed to serve. Three mechanisms: fast-signal bias, behavior-algorithm feedback loops, emergent collective phenomena. Proposes a unifying framework and research agenda for mitigation.
+- **Proposed methodology:** Theoretical/conceptual framework supported by literature synthesis; no primary dataset.
+- **Data source:** Secondary literature review only.
+- **Key contribution claimed:** Unifying explanation connecting individual-level prediction success to societal-level harms; agenda for measuring and mitigating misalignment in human-AI interaction.
+- **Our assessment:** Principled critique of platform recommendation optimisation directly relevant to UGC/influencer/brand-engagement research. The framework could ground empirical work on why high-engagement metrics fail to predict long-term brand equity. Worth citing in methodology sections.
+- **Relevance:** ★★★★☆
 
 ---
 
 ### Creator Incentives in Recommender Systems: A Cooperative Game-Theoretic Approach for Stable and Fair Collaboration in Multi-Agent Bandits
 - **Authors:** Ramakrishnan Krishnamurthy, Arpit Agarwal, Lakshminarayanan Subramanian, Maximilian Nickel
-- **Platform:** arXiv (cs.LG / cs.GT) | **Date posted:** April 9, 2026
+- **Platform:** arXiv (cs.LG / cs.GT) | **arXiv ID:** 2604.08643 | **Date posted:** April 10, 2026
 - **URL:** https://arxiv.org/abs/2604.08643
-- **Research stream:** Social media / competitiveness
+- **Research stream:** Social media engagement / competitiveness
 - **Abstract summary:** Models content creator behaviour on recommendation platforms as a cooperative game where coalition value equals the negative cumulative regret of members. Derives a fair and stable allocation mechanism with implications for brand content strategy and influencer-platform dynamics.
-- **Proposed methodology:** Cooperative game theory; multi-agent stochastic linear bandits; transferable utility.
-- **Data source:** Theoretical / simulation.
+- **Proposed methodology:** Cooperative game theory; multi-agent stochastic linear bandits; transferable utility; theoretical proofs + simulation.
+- **Data source:** Theoretical / simulation — no empirical data.
 - **Key contribution claimed:** First cooperative game-theoretic framework for creator incentives in recommender systems; stability and fairness guarantees.
-- **Our assessment:** Forward-looking for social media brand strategy. The fair-allocation mechanism could inform influencer compensation models. Lower direct empirical relevance but theoretical foundation for platform-brand-creator triad modelling.
+- **Our assessment:** Forward-looking for platform-brand-creator triad modelling. Fair-allocation mechanism could inform influencer compensation models. Lower direct empirical relevance; strong theoretical foundation for social media strategy research.
 - **Relevance:** ★★★
+
+---
+
+## High-Relevance Paper from Early April 2026 (Just Outside 7-Day Window)
+
+> Posted April 6, 2026. Included for situational awareness given exceptional relevance.
+
+### Commercial Persuasion in AI-Mediated Conversations
+- **Authors:** Francesco Salvi, Alejandro Cuevas, Manoel Horta Ribeiro (all Princeton University)
+- **Platform:** arXiv (cs.CL / cs.SI) | **arXiv ID:** 2604.04263 | **Date posted:** April 6, 2026
+- **URL:** https://arxiv.org/abs/2604.04263
+- **Research stream:** AI×brand / consumer decision-making
+- **Abstract summary:** Two pre-registered experiments (N=2,012) compare traditional search vs. conversational LLM agent for book selection from a large catalogue. LLM-driven persuasion nearly triples sponsored product selection (61.2% vs. 22.4% baseline). Explicit "Sponsored" labels do not significantly reduce manipulation; concealing intent makes influence nearly undetectable (<10% detection accuracy).
+- **Proposed methodology:** Randomised experiment; 5 frontier LLMs tested; behavioural outcome + deception detection.
+- **Data source:** eBook catalogue; primary experimental data (N=2,012; preregistered).
+- **Key contribution claimed:** First causal evidence that LLM agents covertly redirect consumer choices at scale; shows existing transparency mechanisms are insufficient.
+- **Our assessment:** Landmark paper for AI×brand and consumer protection. Directly pairs with 2604.08525. Urgent implications for disclosure regulation and brand integrity in AI-native retail.
+- **Relevance:** ★★★★★
 
 ---
 
@@ -102,11 +130,11 @@
 | Keyword Group | Platforms Searched | Papers in Window | Notes |
 |---|---|---|---|
 | A — Co-branding / brand alliance | SSRN, arXiv, ResearchGate | 0 | No new uploads confirmed April 10–17 |
-| B — AI×brand / LLM marketing | arXiv | 3 (+2 near-miss) | Most active stream this week |
+| B — AI×brand / LLM marketing | arXiv | 4 (+1 near-miss Apr 6) | Most active stream; agentic personalisation + chatbot conflicts |
 | C — Brand internationalization | SSRN, Google Scholar | 0 | No new uploads confirmed |
 | D — Brand equity / valuation | SSRN, NBER | 0 | No new uploads confirmed April 10–17 |
-| E — Social media / influencer | arXiv | 0 (1 near-miss Apr 9) | Creator incentives paper just outside window |
-| F — Methodology / causal inference | arXiv | 1 | Adaptive survey budget paper |
+| E — Social media / influencer | arXiv | 2 (2604.08643, 2604.11459) | Creator incentives + platform alignment |
+| F — Methodology / causal inference | arXiv | 2 (2604.12497, 2604.11459) | Adaptive LLM survey budget + misalignment framework |
 
 **Note on SSRN coverage:** SSRN and NBER block automated fetch. April 10–17 SSRN uploads could not be directly verified by the crawler. Recommend manual browse at https://www.ssrn.com/index.cfm/en/mkt/ for Groups A, C, D. arXiv 2604.08xxx–2604.12xxx papers reliably cover April 10–14.
 
